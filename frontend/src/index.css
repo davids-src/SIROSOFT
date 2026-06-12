@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 240 9% 4%;
+        --foreground: 240 20% 95%;
+        --card: 240 12% 7%;
+        --card-foreground: 240 20% 95%;
+        --popover: 240 14% 6%;
+        --popover-foreground: 240 20% 95%;
+        --primary: 4 82% 51%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 240 11% 10%;
+        --secondary-foreground: 240 20% 95%;
+        --muted: 240 11% 10%;
+        --muted-foreground: 240 13% 58%;
+        --accent: 240 11% 11%;
+        --accent-foreground: 240 20% 95%;
+        --destructive: 4 82% 51%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 240 13% 19%;
+        --input: 240 13% 19%;
+        --ring: 4 82% 51%;
+        --radius: 0.5rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        margin: 0;
+        background-color: #0A0A0C;
+        color: #F0F0F5;
+        font-family: "Inter", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    ::selection {
+        background: rgba(232, 39, 26, 0.3);
+        color: #fff;
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: #0A0A0C; }
+    ::-webkit-scrollbar-thumb { background: #2A2A35; border-radius: 8px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3a3a48; }
+}
+
+@layer utilities {
+    .grid-bg {
+        background-image:
+            linear-gradient(rgba(42, 42, 53, 0.35) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(42, 42, 53, 0.35) 1px, transparent 1px);
+        background-size: 56px 56px;
+    }
+    .text-balance { text-wrap: balance; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+}

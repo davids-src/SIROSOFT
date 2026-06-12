@@ -1,0 +1,31 @@
+import {
+  Globe,
+  LayoutDashboard,
+  Users,
+  Server,
+  Smartphone,
+  Code2,
+  Layers,
+  ShieldCheck,
+  Phone,
+  RefreshCw,
+  Clock,
+  Mail,
+  MapPin,
+} from "lucide-react";
+
+export const ICONS = {
+  globe: Globe,
+  "layout-dashboard": LayoutDashboard,
+  users: Users,
+  server: Server,
+  smartphone: Smartphone,
+  "code-2": Code2,
+  layers: Layers,
+  "shield-check": ShieldCheck,
+  phone: Phone,
+  "refresh-cw": RefreshCw,
+  clock: Clock,
+  mail: Mail,
+  "map-pin": MapPin,
+};
