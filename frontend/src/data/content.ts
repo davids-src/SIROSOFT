@@ -1,5 +1,47 @@
 // SIROSOFT – központi magyar tartalom (későbbi i18n-re előkészítve)
 
+export type Accent = "red" | "green";
+
+export interface ServiceRow {
+  id: string;
+  title: string;
+  accent: Accent;
+  icon: string;
+  headline: string;
+  body: string;
+  bullets: string[];
+  cta: string;
+}
+
+export interface ProcessStep {
+  number: string;
+  title: string;
+  body: string;
+}
+
+export interface TechCategory {
+  label: string;
+  items: string[];
+}
+
+export interface ReferenceCard {
+  name: string;
+  industry: string;
+  description: string;
+  tech: string[];
+}
+
+export interface WhyItem {
+  icon: string;
+  title: string;
+  body: string;
+}
+
+export interface ContactDetail {
+  icon: string;
+  value: string;
+}
+
 export const SECTION_IDS = {
   hero: "hero",
   services: "szolgaltatasok",
@@ -8,7 +50,7 @@ export const SECTION_IDS = {
   references: "referenciak",
   why: "miert",
   contact: "kapcsolat",
-};
+} as const;
 
 export const NAV = {
   servicesLabel: "Szolgáltatások",
@@ -19,13 +61,13 @@ export const NAV = {
     { label: "ERP fejlesztés", id: "erp" },
     { label: "Mobilalkalmazás", id: "mobile_app" },
     { label: "Egyedi szoftver", id: "custom_software" },
-  ],
+  ] as { label: string; id: string }[],
   links: [
     { label: "Referenciák", target: SECTION_IDS.references },
     { label: "Folyamat", target: SECTION_IDS.process },
     { label: "Rólunk", target: SECTION_IDS.why },
     { label: "Kapcsolat", target: SECTION_IDS.contact },
-  ],
+  ] as { label: string; target: string }[],
   cta: "Projektet indítok →",
 };
 
@@ -53,7 +95,7 @@ export const HERO = {
   ],
 };
 
-export const SERVICES = {
+export const SERVICES: { eyebrow: string; headline: string; rows: ServiceRow[] } = {
   eyebrow: "SZOLGÁLTATÁSOK",
   headline: "Mit fejlesztünk",
   rows: [
@@ -150,7 +192,7 @@ export const SERVICES = {
   ],
 };
 
-export const PROCESS = {
+export const PROCESS: { eyebrow: string; headline: string; steps: ProcessStep[] } = {
   eyebrow: "FOLYAMAT",
   headline: "Hogyan dolgozunk együtt",
   steps: [
@@ -162,7 +204,7 @@ export const PROCESS = {
   ],
 };
 
-export const TECH = {
+export const TECH: { eyebrow: string; headline: string; categories: TechCategory[] } = {
   eyebrow: "TECHNOLÓGIÁK",
   headline: "Amivel dolgozunk",
   categories: [
@@ -174,7 +216,7 @@ export const TECH = {
   ],
 };
 
-export const REFERENCES = {
+export const REFERENCES: { eyebrow: string; headline: string; cards: ReferenceCard[] } = {
   eyebrow: "REFERENCIÁK",
   headline: "Amit már megcsináltunk",
   cards: [
@@ -199,7 +241,7 @@ export const REFERENCES = {
   ],
 };
 
-export const WHY = {
+export const WHY: { eyebrow: string; headline: string; items: WhyItem[] } = {
   eyebrow: "MIÉRT SIROSOFT",
   headline: "Amit máshol nem kapsz meg",
   items: [
@@ -219,7 +261,14 @@ export const CONTACT_CTA = {
   note: "Az igényfelmérő konzultáció ingyenes és kötelezettségmentes.",
 };
 
-export const CONTACT = {
+export const CONTACT: {
+  eyebrow: string;
+  headline: string;
+  details: ContactDetail[];
+  serviceOptions: string[];
+  budgetOptions: string[];
+  submit: string;
+} = {
   eyebrow: "KAPCSOLAT",
   headline: "Kezdjük el a projektet.",
   details: [

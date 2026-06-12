@@ -1,6 +1,14 @@
 import { motion } from "framer-motion";
+import type { ReactNode } from "react";
 
-export const Reveal = ({ children, delay = 0, y = 24, className = "" }) => (
+interface RevealProps {
+  children: ReactNode;
+  delay?: number;
+  y?: number;
+  className?: string;
+}
+
+export const Reveal = ({ children, delay = 0, y = 24, className = "" }: RevealProps) => (
   <motion.div
     initial={{ opacity: 0, y }}
     whileInView={{ opacity: 1, y: 0 }}

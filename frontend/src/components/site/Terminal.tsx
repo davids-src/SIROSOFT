@@ -1,8 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 
+interface TerminalProps {
+  lines: string[];
+}
+
+interface DisplayedLine {
+  text: string;
+  done: boolean;
+}
+
 // Soronkénti typewriter effekt zöld terminál panelen.
-export const Terminal = ({ lines }) => {
-  const [displayed, setDisplayed] = useState([]); // {text, done}
+export const Terminal = ({ lines }: TerminalProps) => {
+  const [displayed, setDisplayed] = useState<DisplayedLine[]>([]);
   const [current, setCurrent] = useState("");
   const lineIdx = useRef(0);
   const charIdx = useRef(0);
@@ -14,11 +23,10 @@ export const Terminal = ({ lines }) => {
       return;
     }
 
-    let timer;
+    let timer: ReturnType<typeof setTimeout>;
     const tick = () => {
       const li = lineIdx.current;
       if (li >= lines.length) {
-        // restart loop after pause
         timer = setTimeout(() => {
           setDisplayed([]);
           setCurrent("");

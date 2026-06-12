@@ -12,9 +12,10 @@ import {
   Clock,
   Mail,
   MapPin,
+  type LucideIcon,
 } from "lucide-react";
 
-export const ICONS = {
+export const ICONS: Record<string, LucideIcon> = {
   globe: Globe,
   "layout-dashboard": LayoutDashboard,
   users: Users,

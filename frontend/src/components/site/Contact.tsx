@@ -1,16 +1,28 @@
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import axios from "axios";
 import { toast } from "sonner";
-import { Mail, Phone, MapPin, Loader2 } from "lucide-react";
+import { Mail, Phone, MapPin, Loader2, type LucideIcon } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { CONTACT, SECTION_IDS } from "@/data/content";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL as string;
 const API = `${BACKEND_URL}/api`;
 
-const DETAIL_ICONS = { mail: Mail, phone: Phone, "map-pin": MapPin };
+const DETAIL_ICONS: Record<string, LucideIcon> = { mail: Mail, phone: Phone, "map-pin": MapPin };
 
-const initial = {
+interface ContactForm {
+  company: string;
+  contact_name: string;
+  email: string;
+  phone: string;
+  services: string[];
+  description: string;
+  budget: string;
+}
+
+type FormErrors = Partial<Record<keyof ContactForm, string>>;
+
+const initial: ContactForm = {
   company: "",
   contact_name: "",
   email: "",
@@ -21,16 +33,16 @@ const initial = {
 };
 
 export const Contact = () => {
-  const [form, setForm] = useState(initial);
-  const [errors, setErrors] = useState({});
+  const [form, setForm] = useState<ContactForm>(initial);
+  const [errors, setErrors] = useState<FormErrors>({});
   const [loading, setLoading] = useState(false);
 
-  const set = (key, value) => {
+  const set = <K extends keyof ContactForm>(key: K, value: ContactForm[K]) => {
     setForm((f) => ({ ...f, [key]: value }));
     setErrors((e) => ({ ...e, [key]: undefined }));
   };
 
-  const toggleService = (option) => {
+  const toggleService = (option: string) => {
     setForm((f) => ({
       ...f,
       services: f.services.includes(option)
@@ -39,8 +51,8 @@ export const Contact = () => {
     }));
   };
 
-  const validate = () => {
-    const e = {};
+  const validate = (): boolean => {
+    const e: FormErrors = {};
     if (!form.company.trim()) e.company = "Kötelező mező";
     if (!form.contact_name.trim()) e.contact_name = "Kötelező mező";
     if (!form.email.trim()) e.email = "Kötelező mező";
@@ -49,7 +61,7 @@ export const Contact = () => {
     return Object.keys(e).length === 0;
   };
 
-  const submit = async (ev) => {
+  const submit = async (ev: FormEvent<HTMLFormElement>) => {
     ev.preventDefault();
     if (!validate()) {
       toast.error("Kérlek töltsd ki a kötelező mezőket.");

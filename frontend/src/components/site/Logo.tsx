@@ -1,5 +1,11 @@
+interface LogoProps {
+  className?: string;
+  onClick?: () => void;
+  compact?: boolean;
+}
+
 // SIROSOFT wordmark + icon. Az ikon helye SVG-vel kitöltve; cserélhető a végleges logóra.
-export const Logo = ({ className = "", onClick, compact = false }) => (
+export const Logo = ({ className = "", onClick, compact = false }: LogoProps) => (
   <button
     type="button"
     onClick={onClick}

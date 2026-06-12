@@ -15,7 +15,7 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const go = (id) => {
+  const go = (id: string) => {
     setMobileOpen(false);
     setServicesOpen(false);
     scrollToId(id);

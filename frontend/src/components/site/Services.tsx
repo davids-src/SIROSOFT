@@ -1,12 +1,16 @@
 import { Check } from "lucide-react";
-import { motion } from "framer-motion";
 import { SectionHeading } from "./SectionHeading";
 import { Reveal } from "./Reveal";
 import { ICONS } from "./icons";
-import { SERVICES, SECTION_IDS } from "@/data/content";
+import { SERVICES, SECTION_IDS, type ServiceRow } from "@/data/content";
 import { scrollToId } from "@/lib/scroll";
 
-const Row = ({ row, index }) => {
+interface RowProps {
+  row: ServiceRow;
+  index: number;
+}
+
+const Row = ({ row, index }: RowProps) => {
   const Icon = ICONS[row.icon];
   const isRed = row.accent === "red";
   const accentText = isRed ? "text-siro-red" : "text-siro-green";
