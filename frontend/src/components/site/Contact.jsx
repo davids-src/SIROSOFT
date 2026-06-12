@@ -99,7 +99,7 @@ export const Contact = () => {
 
         {/* Right: form */}
         <Reveal delay={0.1}>
-          <form onSubmit={submit} data-testid="contact-form" className="rounded-lg border border-siro-border bg-siro-bg p-6 lg:p-8">
+          <form onSubmit={submit} noValidate data-testid="contact-form" className="rounded-lg border border-siro-border bg-siro-bg p-6 lg:p-8">
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
               <div>
                 <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-siro-muted">Cégnév *</label>
