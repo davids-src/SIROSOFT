@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { SonnerToaster } from "@/components/SonnerToaster";
@@ -36,6 +36,9 @@ export const metadata: Metadata = {
     locale: "hu_HU",
     type: "website",
   },
+};
+
+export const viewport: Viewport = {
   themeColor: "#0A0A0C",
 };
 
