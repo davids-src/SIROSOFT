@@ -1,11 +1,21 @@
 "use client";
 
 import { Check } from "lucide-react";
+import Link from "next/link";
 import { SectionHeading } from "./SectionHeading";
 import { Reveal } from "./Reveal";
 import { ICONS } from "./icons";
 import { SERVICES, SECTION_IDS, type ServiceRow } from "@/data/content";
 import { scrollToId } from "@/lib/scroll";
+
+const SERVICE_SLUGS: Record<string, string> = {
+  webdev: "webfejlesztes",
+  internal_systems: "belso-rendszerek",
+  crm: "crm-fejlesztes",
+  erp: "erp-fejlesztes",
+  mobile_app: "mobilalkalmazas",
+  custom_software: "egyedi-szoftver",
+};
 
 interface RowProps {
   row: ServiceRow;
@@ -37,13 +47,21 @@ const Row = ({ row, index }: RowProps) => {
           </div>
           <h3 className="font-display text-xl font-semibold text-siro-text sm:text-2xl">{row.headline}</h3>
           <p className="mt-3 text-[15px] leading-[1.7] text-siro-muted">{row.body}</p>
-          <button
-            data-testid={`service-cta-${row.id}`}
-            onClick={() => scrollToId(SECTION_IDS.contact)}
-            className={`mt-5 text-sm font-semibold ${accentText} transition-opacity hover:opacity-80`}
-          >
-            {row.cta}
-          </button>
+          <div className="mt-5 flex flex-wrap items-center gap-4">
+            <button
+              data-testid={`service-cta-${row.id}`}
+              onClick={() => scrollToId(SECTION_IDS.contact)}
+              className={`text-sm font-semibold ${accentText} transition-opacity hover:opacity-80`}
+            >
+              {row.cta}
+            </button>
+            <Link
+              href={`/szolgaltatasok/${SERVICE_SLUGS[row.id] ?? row.id}`}
+              className="text-sm text-siro-muted transition-colors hover:text-siro-text"
+            >
+              Részletek →
+            </Link>
+          </div>
         </div>
 
         {/* Bullets */}

@@ -2,9 +2,19 @@
 
 import { useEffect, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
+import Link from "next/link";
 import { Logo } from "./Logo";
 import { NAV, SECTION_IDS } from "@/data/content";
 import { scrollToId } from "@/lib/scroll";
+
+const SERVICE_SLUGS: Record<string, string> = {
+  webdev: "webfejlesztes",
+  internal_systems: "belso-rendszerek",
+  crm: "crm-fejlesztes",
+  erp: "erp-fejlesztes",
+  mobile_app: "mobilalkalmazas",
+  custom_software: "egyedi-szoftver",
+};
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -56,14 +66,15 @@ export const Navbar = () => {
                 className="absolute left-0 top-full w-60 overflow-hidden rounded-lg border border-siro-border bg-siro-bg2 p-1.5 shadow-2xl"
               >
                 {NAV.servicesDropdown.map((item) => (
-                  <button
+                  <Link
                     key={item.id}
+                    href={`/szolgaltatasok/${SERVICE_SLUGS[item.id] ?? item.id}`}
                     data-testid={`nav-dropdown-${item.id}`}
-                    onClick={() => go(SECTION_IDS.services)}
+                    onClick={() => { setMobileOpen(false); setServicesOpen(false); }}
                     className="block w-full rounded px-3 py-2 text-left text-sm text-siro-muted transition-colors hover:bg-siro-bg3 hover:text-siro-text"
                   >
                     {item.label}
-                  </button>
+                  </Link>
                 ))}
               </div>
             )}
@@ -116,9 +127,18 @@ export const Navbar = () => {
       {mobileOpen && (
         <div data-testid="mobile-menu" className="border-t border-siro-border bg-siro-bg2 px-5 py-4 lg:hidden">
           <div className="flex flex-col gap-1">
-            <button onClick={() => go(SECTION_IDS.services)} className="rounded px-3 py-2.5 text-left text-sm text-siro-text">
-              {NAV.servicesLabel}
-            </button>
+            <div className="px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-siro-muted">Szolgáltatások</div>
+            {NAV.servicesDropdown.map((item) => (
+              <Link
+                key={item.id}
+                href={`/szolgaltatasok/${SERVICE_SLUGS[item.id] ?? item.id}`}
+                onClick={() => setMobileOpen(false)}
+                className="rounded px-3 py-2 text-left text-sm text-siro-muted hover:text-siro-text"
+              >
+                {item.label}
+              </Link>
+            ))}
+            <div className="my-1 border-t border-siro-border" />
             {NAV.links.map((link) => (
               <button
                 key={link.target}
