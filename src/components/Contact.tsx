@@ -4,6 +4,7 @@ import { useState, type FormEvent } from "react";
 import { toast } from "sonner";
 import { Mail, Phone, MapPin, Loader2, type LucideIcon } from "lucide-react";
 import { Reveal } from "./Reveal";
+import { SectionHeading } from "./SectionHeading";
 import { CONTACT, SECTION_IDS } from "@/data/content";
 
 const DETAIL_ICONS: Record<string, LucideIcon> = { mail: Mail, phone: Phone, "map-pin": MapPin };
@@ -83,156 +84,179 @@ export const Contact = () => {
   };
 
   const inputClass =
-    "w-full rounded-[4px] border border-siro-border bg-siro-bg px-4 py-3 text-sm text-siro-text placeholder:text-siro-muted/60 outline-none transition-colors focus:border-siro-green";
+    "w-full rounded border border-line bg-bg px-4 py-3 text-sm text-ink placeholder:text-muted/50 transition-colors focus:border-silver focus:outline-none";
 
   return (
-    <section id={SECTION_IDS.contact} data-testid="contact-section" className="border-t border-siro-border bg-siro-bg2/40 py-28 lg:py-32">
-      <div className="mx-auto grid max-w-site grid-cols-1 gap-12 px-5 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16 lg:px-8">
-        {/* Left: details */}
-        <Reveal>
-          <span className="font-mono text-xs font-semibold uppercase tracking-[0.12em] text-siro-green">{CONTACT.eyebrow}</span>
-          <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-siro-text sm:text-4xl">{CONTACT.headline}</h2>
-          <div className="mt-8 space-y-4">
-            {CONTACT.details.map((d) => {
-              const Icon = DETAIL_ICONS[d.icon];
-              return (
-                <div key={d.value} className="flex items-center gap-3 text-siro-text" data-testid={`contact-detail-${d.icon}`}>
-                  <span className="flex h-10 w-10 items-center justify-center rounded-lg border border-siro-border bg-siro-bg text-siro-green">
-                    <Icon size={18} />
-                  </span>
-                  <span className="text-[15px]">{d.value}</span>
+    <section id={SECTION_IDS.contact} data-testid="contact-section" className="border-t border-line/50 bg-surface/40 py-28 lg:py-32">
+      <div className="mx-auto max-w-site px-6">
+        <SectionHeading eyebrow={CONTACT.eyebrow} headline={CONTACT.headline} accent="green" />
+
+        <div className="mt-14 grid grid-cols-1 gap-12 lg:grid-cols-12">
+          {/* Left column */}
+          <div className="lg:col-span-5">
+            <Reveal>
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  {CONTACT.details.map((d) => {
+                    const Icon = DETAIL_ICONS[d.icon];
+                    return (
+                      <div key={d.value} className="flex items-center gap-4 text-ink" data-testid={`contact-detail-${d.icon}`}>
+                        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-line bg-bg text-[#1AE87B]">
+                          <Icon size={18} />
+                        </span>
+                        <span className="text-sm font-medium">{d.value}</span>
+                      </div>
+                    );
+                  })}
                 </div>
-              );
-            })}
+
+                <div className="rounded-lg border border-line bg-surface p-5 font-mono text-xs text-muted">
+                  <div className="text-[#1AE87B]">{"> response_time: < 24h"}</div>
+                  <div>{"> consultation: free"}</div>
+                  <div>{"> commitment: none"}</div>
+                </div>
+              </div>
+            </Reveal>
           </div>
-          <div className="mt-8 rounded-lg border border-siro-border bg-[#08080A] p-5 font-mono text-xs leading-relaxed text-siro-green">
-            <div>{"> response_time: < 24h"}</div>
-            <div>{"> consultation: free"}</div>
-            <div>{"> commitment: none"}</div>
+
+          {/* Right column: Form */}
+          <div className="lg:col-span-7">
+            <Reveal delay={0.1}>
+              <form onSubmit={submit} noValidate data-testid="contact-form" className="rounded-lg border border-line bg-surface p-6 lg:p-8">
+                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                  <div>
+                    <label className="mb-2 block font-mono text-xs font-semibold uppercase tracking-[0.12em] text-muted">
+                      Cégnév *
+                    </label>
+                    <input
+                      data-testid="input-company"
+                      className={inputClass}
+                      value={form.company}
+                      onChange={(e) => set("company", e.target.value)}
+                      placeholder="Pl. Példa Kft."
+                    />
+                    {errors.company && <p className="mt-1 text-xs text-[#E8271A]">{errors.company}</p>}
+                  </div>
+                  <div>
+                    <label className="mb-2 block font-mono text-xs font-semibold uppercase tracking-[0.12em] text-muted">
+                      Kapcsolattartó neve *
+                    </label>
+                    <input
+                      data-testid="input-contact-name"
+                      className={inputClass}
+                      value={form.contact_name}
+                      onChange={(e) => set("contact_name", e.target.value)}
+                      placeholder="Teljes név"
+                    />
+                    {errors.contact_name && <p className="mt-1 text-xs text-[#E8271A]">{errors.contact_name}</p>}
+                  </div>
+                  <div>
+                    <label className="mb-2 block font-mono text-xs font-semibold uppercase tracking-[0.12em] text-muted">
+                      E-mail cím *
+                    </label>
+                    <input
+                      data-testid="input-email"
+                      type="email"
+                      className={inputClass}
+                      value={form.email}
+                      onChange={(e) => set("email", e.target.value)}
+                      placeholder="nev@ceg.hu"
+                    />
+                    {errors.email && <p className="mt-1 text-xs text-[#E8271A]">{errors.email}</p>}
+                  </div>
+                  <div>
+                    <label className="mb-2 block font-mono text-xs font-semibold uppercase tracking-[0.12em] text-muted">
+                      Telefonszám
+                    </label>
+                    <input
+                      data-testid="input-phone"
+                      type="tel"
+                      className={inputClass}
+                      value={form.phone}
+                      onChange={(e) => set("phone", e.target.value)}
+                      placeholder="+36 ..."
+                    />
+                  </div>
+                </div>
+
+                {/* Services checkboxes */}
+                <div className="mt-6">
+                  <label className="mb-2 block font-mono text-xs font-semibold uppercase tracking-[0.12em] text-muted">
+                    Milyen fejlesztésre van szükséged?
+                  </label>
+                  <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                    {CONTACT.serviceOptions.map((opt) => {
+                      const active = form.services.includes(opt);
+                      return (
+                        <button
+                          type="button"
+                          key={opt}
+                          data-testid={`service-option-${opt}`}
+                          onClick={() => toggleService(opt)}
+                          className={`flex items-center gap-2.5 rounded border px-3.5 py-2.5 text-left text-xs transition-colors ${
+                            active
+                              ? "border-[#1AE87B]/60 bg-[#1AE87B]/12 text-ink font-medium"
+                              : "border-line bg-bg text-muted hover:border-silver/50"
+                          }`}
+                        >
+                          <span className={`flex h-4 w-4 items-center justify-center rounded-sm border ${active ? "border-[#1AE87B] bg-[#1AE87B]" : "border-line"}`}>
+                            {active && <span className="h-2 w-2 rounded-sm bg-[#0A0A0C]" />}
+                          </span>
+                          {opt}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Description */}
+                <div className="mt-6">
+                  <label className="mb-2 block font-mono text-xs font-semibold uppercase tracking-[0.12em] text-muted">
+                    Rövid projekt leírás
+                  </label>
+                  <textarea
+                    data-testid="input-description"
+                    rows={4}
+                    className={`${inputClass} resize-none`}
+                    value={form.description}
+                    onChange={(e) => set("description", e.target.value)}
+                    placeholder="Mi a jelenlegi probléma, amit meg szeretnél oldani?"
+                  />
+                </div>
+
+                {/* Budget */}
+                <div className="mt-6">
+                  <label className="mb-2 block font-mono text-xs font-semibold uppercase tracking-[0.12em] text-muted">
+                    Tervezett büdzsé (opcionális)
+                  </label>
+                  <select
+                    data-testid="input-budget"
+                    className={`${inputClass} appearance-none`}
+                    value={form.budget}
+                    onChange={(e) => set("budget", e.target.value)}
+                  >
+                    <option value="">Válassz...</option>
+                    {CONTACT.budgetOptions.map((opt) => (
+                      <option key={opt} value={opt} className="bg-panel text-ink">
+                        {opt}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <button
+                  type="submit"
+                  data-testid="contact-submit"
+                  disabled={loading}
+                  className="mt-8 flex w-full items-center justify-center gap-2 rounded bg-[#1AE87B] px-6 py-3.5 text-sm font-semibold text-[#0A0A0C] transition-transform duration-150 ease-out hover:scale-[1.02] disabled:opacity-60"
+                >
+                  {loading && <Loader2 size={16} className="animate-spin" />}
+                  {loading ? "Küldés..." : CONTACT.submit}
+                </button>
+              </form>
+            </Reveal>
           </div>
-        </Reveal>
-
-        {/* Right: form */}
-        <Reveal delay={0.1}>
-          <form onSubmit={submit} noValidate data-testid="contact-form" className="rounded-lg border border-siro-border bg-siro-bg p-6 lg:p-8">
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-              <div>
-                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-siro-muted">Cégnév *</label>
-                <input
-                  data-testid="input-company"
-                  className={inputClass}
-                  value={form.company}
-                  onChange={(e) => set("company", e.target.value)}
-                  placeholder="Pl. Példa Kft."
-                />
-                {errors.company && <p className="mt-1 text-xs text-siro-red">{errors.company}</p>}
-              </div>
-              <div>
-                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-siro-muted">Kapcsolattartó neve *</label>
-                <input
-                  data-testid="input-contact-name"
-                  className={inputClass}
-                  value={form.contact_name}
-                  onChange={(e) => set("contact_name", e.target.value)}
-                  placeholder="Teljes név"
-                />
-                {errors.contact_name && <p className="mt-1 text-xs text-siro-red">{errors.contact_name}</p>}
-              </div>
-              <div>
-                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-siro-muted">E-mail cím *</label>
-                <input
-                  data-testid="input-email"
-                  type="email"
-                  className={inputClass}
-                  value={form.email}
-                  onChange={(e) => set("email", e.target.value)}
-                  placeholder="nev@ceg.hu"
-                />
-                {errors.email && <p className="mt-1 text-xs text-siro-red">{errors.email}</p>}
-              </div>
-              <div>
-                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-siro-muted">Telefonszám</label>
-                <input
-                  data-testid="input-phone"
-                  type="tel"
-                  className={inputClass}
-                  value={form.phone}
-                  onChange={(e) => set("phone", e.target.value)}
-                  placeholder="+36 ..."
-                />
-              </div>
-            </div>
-
-            {/* Services checkboxes */}
-            <div className="mt-6">
-              <label className="mb-3 block text-xs font-semibold uppercase tracking-wider text-siro-muted">Milyen fejlesztésre van szükséged?</label>
-              <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-                {CONTACT.serviceOptions.map((opt) => {
-                  const active = form.services.includes(opt);
-                  return (
-                    <button
-                      type="button"
-                      key={opt}
-                      data-testid={`service-option-${opt}`}
-                      onClick={() => toggleService(opt)}
-                      className={`flex items-center gap-2.5 rounded-[4px] border px-3 py-2.5 text-left text-sm transition-colors ${
-                        active
-                          ? "border-siro-green/60 bg-siro-green/10 text-siro-text"
-                          : "border-siro-border bg-siro-bg2 text-siro-muted hover:text-siro-text"
-                      }`}
-                    >
-                      <span className={`flex h-4 w-4 items-center justify-center rounded-[3px] border ${active ? "border-siro-green bg-siro-green" : "border-siro-border"}`}>
-                        {active && <span className="h-2 w-2 rounded-[1px] bg-siro-bg" />}
-                      </span>
-                      {opt}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Description */}
-            <div className="mt-6">
-              <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-siro-muted">Rövid projekt leírás</label>
-              <textarea
-                data-testid="input-description"
-                rows={4}
-                className={`${inputClass} resize-none`}
-                value={form.description}
-                onChange={(e) => set("description", e.target.value)}
-                placeholder="Mi a jelenlegi probléma, amit meg szeretnél oldani?"
-              />
-            </div>
-
-            {/* Budget */}
-            <div className="mt-6">
-              <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-siro-muted">Tervezett büdzsé (opcionális)</label>
-              <select
-                data-testid="input-budget"
-                className={`${inputClass} appearance-none`}
-                value={form.budget}
-                onChange={(e) => set("budget", e.target.value)}
-              >
-                <option value="">Válassz...</option>
-                {CONTACT.budgetOptions.map((opt) => (
-                  <option key={opt} value={opt} className="bg-siro-bg2">
-                    {opt}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <button
-              type="submit"
-              data-testid="contact-submit"
-              disabled={loading}
-              className="mt-7 flex w-full items-center justify-center gap-2 rounded-[4px] bg-siro-red px-6 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-[#ff352a] hover:shadow-glow-red disabled:opacity-60"
-            >
-              {loading && <Loader2 size={16} className="animate-spin" />}
-              {loading ? "Küldés..." : CONTACT.submit}
-            </button>
-          </form>
-        </Reveal>
+        </div>
       </div>
     </section>
   );

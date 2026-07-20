@@ -12,53 +12,44 @@ interface Props {
 
 export const ServicePageHero = ({ page }: Props) => {
   const Icon = ICONS[page.icon] ?? ICONS["code-2"];
-  const isRed = page.accent === "red";
-  const accentText = isRed ? "text-siro-red" : "text-siro-green";
-  const accentBg = isRed ? "bg-siro-red/10" : "bg-siro-green/10";
-  const accentBorder = isRed ? "border-siro-red/30" : "border-siro-green/30";
-  const glowClass = isRed
-    ? "bg-[radial-gradient(ellipse_at_top,rgba(232,39,26,0.18),transparent_60%)]"
-    : "bg-[radial-gradient(ellipse_at_top,rgba(26,232,123,0.14),transparent_60%)]";
 
   return (
-    <section className="relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28">
+    <section className="relative overflow-hidden pt-36 pb-24 sm:pt-44 lg:pb-28">
       {/* Background */}
-      <div className="pointer-events-none absolute inset-0 grid-bg opacity-30" />
-      <div className={`pointer-events-none absolute inset-0 ${glowClass}`} />
+      <div className="pointer-events-none absolute inset-0 hero-grid opacity-40" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(26,232,123,0.15),transparent_60%)]" />
 
-      <div className="relative mx-auto max-w-site px-5 lg:px-8">
+      <div className="relative mx-auto max-w-site px-6">
         {/* Back link */}
         <Link
           href="/#szolgaltatasok"
-          className="mb-8 inline-flex items-center gap-2 font-mono text-xs text-siro-muted transition-colors hover:text-siro-text"
+          className="mb-8 inline-flex items-center gap-2 font-mono text-xs text-muted transition-colors duration-150 hover:text-ink"
         >
           <ArrowLeft size={14} />
           Vissza a szolgáltatásokhoz
         </Link>
 
         {/* Eyebrow */}
-        <div className="mb-5 flex items-center gap-3">
-          <span
-            className={`flex h-11 w-11 items-center justify-center rounded-lg border ${accentBorder} ${accentBg} ${accentText}`}
-          >
-            <Icon size={20} />
+        <div className="mb-6 flex items-center gap-3">
+          <span className="flex h-11 w-11 items-center justify-center rounded-lg border border-line bg-panel text-[#1AE87B]">
+            <Icon size={20} strokeWidth={1.5} />
           </span>
-          <span className={`font-mono text-xs font-semibold uppercase tracking-[0.12em] ${accentText}`}>
+          <span className="label font-mono text-xs font-semibold uppercase tracking-[0.12em] text-[#1AE87B]">
             {page.eyebrow}
           </span>
         </div>
 
-        <h1 className="max-w-3xl font-display text-4xl font-semibold tracking-tight text-siro-text sm:text-5xl lg:text-6xl">
+        <h1 className="max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-[-0.04em] text-ink sm:text-5xl lg:text-6xl">
           {page.headline}
         </h1>
-        <p className="mt-5 max-w-2xl text-lg leading-[1.7] text-siro-muted">{page.subheadline}</p>
+        <p className="mt-6 max-w-2xl text-lg leading-[1.7] text-muted">{page.subheadline}</p>
 
         {/* Badges */}
         <div className="mt-8 flex flex-wrap gap-2">
           {page.heroBadges.map((badge) => (
             <span
               key={badge}
-              className="rounded-full border border-siro-border bg-siro-bg2 px-3 py-1 font-mono text-xs text-siro-muted"
+              className="rounded-sm border border-line bg-surface px-3 py-1 font-mono text-xs text-muted"
             >
               {badge}
             </span>
@@ -69,17 +60,13 @@ export const ServicePageHero = ({ page }: Props) => {
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <a
             href={`/#${SECTION_IDS.contact}`}
-            className={`rounded-[4px] px-6 py-3 text-sm font-semibold text-white transition-all duration-200 ${
-              isRed
-                ? "bg-siro-red hover:bg-[#ff352a] hover:shadow-glow-red"
-                : "bg-siro-green text-siro-bg hover:bg-[#22ff8a] hover:shadow-glow-green"
-            }`}
+            className="rounded bg-[#1AE87B] px-6 py-3 text-sm font-semibold text-[#0A0A0C] transition-transform duration-150 ease-out hover:scale-[1.02]"
           >
             {page.cta.button}
           </a>
           <Link
             href="/#referenciak"
-            className="text-sm font-medium text-siro-muted transition-colors hover:text-siro-text"
+            className="text-sm font-medium text-muted transition-colors duration-150 hover:text-ink"
           >
             Referenciáink →
           </Link>

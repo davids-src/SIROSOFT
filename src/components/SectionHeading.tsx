@@ -15,19 +15,16 @@ export const SectionHeading = ({
   eyebrow,
   headline,
   description,
-  align = "left",
-  accent = "green",
 }: SectionHeadingProps) => {
-  const accentColor = accent === "red" ? "text-siro-red" : "text-siro-green";
   return (
-    <Reveal className={align === "center" ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
-      <span className={`font-mono text-xs font-semibold uppercase tracking-[0.12em] ${accentColor}`}>
+    <Reveal className="max-w-2xl">
+      <span className="label block text-xs font-semibold uppercase tracking-[0.12em] text-[#1AE87B]">
         {eyebrow}
       </span>
-      <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-siro-text sm:text-4xl">
+      <h2 className="mt-6 font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl leading-[1.15]">
         {headline}
       </h2>
-      {description && <p className="mt-4 text-base leading-[1.7] text-siro-muted">{description}</p>}
+      {description && <p className="mt-5 text-base leading-[1.7] text-muted">{description}</p>}
     </Reveal>
   );
 };

@@ -14,6 +14,14 @@ const config: Config = {
         site: "1280px",
       },
       colors: {
+        bg: "#0A0A0C",
+        surface: "#111116",
+        panel: "#18181F",
+        line: "#2A2A35",
+        ink: "#F0F0F5",
+        muted: "#8888A0",
+        silver: "#C0C0D0",
+        accent: "#1AE87B",
         siro: {
           bg: "#0A0A0C",
           bg2: "#111116",
@@ -21,13 +29,15 @@ const config: Config = {
           border: "#2A2A35",
           text: "#F0F0F5",
           muted: "#8888A0",
-          red: "#E8271A",
+          red: "#1AE87B",
           green: "#1AE87B",
         },
       },
       boxShadow: {
-        "glow-red": "0 0 40px rgba(232,39,26,0.20)",
-        "glow-green": "0 0 40px rgba(26,232,123,0.16)",
+        "accent-glow": "0 0 28px -14px #1AE87B",
+        "accent-glow-hover": "0 0 56px -10px #1AE87B",
+        "glow-red": "0 0 28px -14px #1AE87B",
+        "glow-green": "0 0 28px -14px #1AE87B",
       },
       keyframes: {
         blink: {

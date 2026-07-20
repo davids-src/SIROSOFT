@@ -59,24 +59,24 @@ export const Terminal = ({ lines }: TerminalProps) => {
   return (
     <div
       data-testid="hero-terminal"
-      className="overflow-hidden rounded-lg border border-siro-border bg-[#08080A] shadow-2xl"
+      className="overflow-hidden rounded-lg border border-line bg-[#08080A] shadow-2xl"
     >
-      <div className="flex items-center gap-2 border-b border-siro-border bg-siro-bg2 px-4 py-2.5">
-        <span className="h-3 w-3 rounded-full bg-siro-red" />
+      <div className="flex items-center gap-2 border-b border-line bg-surface px-4 py-2.5">
+        <span className="h-3 w-3 rounded-full bg-[#1AE87B]" />
         <span className="h-3 w-3 rounded-full bg-[#2A2A35]" />
         <span className="h-3 w-3 rounded-full bg-[#2A2A35]" />
-        <span className="ml-3 font-mono text-xs text-siro-muted">sirosoft — build.sh</span>
+        <span className="ml-3 font-mono text-xs text-muted">sirosoft — build.sh</span>
       </div>
       <div className="min-h-[260px] p-5 font-mono text-[13px] leading-relaxed sm:text-sm">
         {displayed.map((l, i) => (
-          <div key={i} className="text-siro-green">
+          <div key={i} className="text-[#1AE87B]">
             {l.text}
           </div>
         ))}
         {lineIdx.current < lines.length && (
-          <div className="text-siro-green">
+          <div className="text-[#1AE87B]">
             {current}
-            <span className="ml-0.5 inline-block h-3.5 w-2 translate-y-0.5 bg-siro-green animate-blink" />
+            <span className="ml-0.5 inline-block h-3.5 w-2 translate-y-0.5 bg-[#1AE87B] animate-blink" />
           </div>
         )}
       </div>

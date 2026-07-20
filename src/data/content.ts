@@ -1,6 +1,6 @@
 // SIROSOFT – központi magyar tartalom (későbbi i18n-re előkészítve)
 
-export type Accent = "red" | "green";
+export type Accent = "green";
 
 export interface ServiceRow {
   id: string;
@@ -102,7 +102,7 @@ export const SERVICES: { eyebrow: string; headline: string; rows: ServiceRow[] }
     {
       id: "webdev",
       title: "Webfejlesztés",
-      accent: "red",
+      accent: "green",
       icon: "globe",
       headline: "Gyors, modern, konverziós weboldalak",
       body: "Egyedi tervezésű és fejlesztésű weboldalak vállalkozásoknak. Nem WordPress sablon — hanem Next.js alapú, villámgyors, SEO-optimalizált, mobilbarát megoldás. Webshoptól landing page-ig.",
@@ -132,7 +132,7 @@ export const SERVICES: { eyebrow: string; headline: string; rows: ServiceRow[] }
     {
       id: "crm",
       title: "CRM fejlesztés",
-      accent: "red",
+      accent: "green",
       icon: "users",
       headline: "Ügyfélkezelés, ami tényleg az üzleted logikáját követi",
       body: "Nem veszel drága licenszt egy feleslegesen komplex rendszerhez — mi megírjuk azt a CRM-et, ami pontosan azt tudja, amire szükséged van. Kapcsolatkezelés, ajánlatok, feladatok, értékesítési pipeline — mind egy helyen.",
@@ -162,7 +162,7 @@ export const SERVICES: { eyebrow: string; headline: string; rows: ServiceRow[] }
     {
       id: "mobile_app",
       title: "Mobilalkalmazás",
-      accent: "red",
+      accent: "green",
       icon: "smartphone",
       headline: "iOS és Android — egy kódbázisból",
       body: "React Native alapú mobilalkalmazások, amelyek iOS-en és Androidon egyaránt natív élményt nyújtanak. Belső vállalati appektól ügyfél-facing megoldásokig.",
@@ -272,9 +272,9 @@ export const CONTACT: {
   eyebrow: "KAPCSOLAT",
   headline: "Kezdjük el a projektet.",
   details: [
-    { icon: "mail", value: "info@sirosoft.hu" },
-    { icon: "phone", value: "+36 ..." },
-    { icon: "map-pin", value: "Székesfehérvár / Remote" },
+    { icon: "mail", value: "hello@sironic.hu" },
+    { icon: "phone", value: "+36 70 273 5532" },
+    { icon: "map-pin", value: "8000 Székesfehérvár, Lövölde utca 24 4/15" },
   ],
   serviceOptions: [
     "Weboldal fejlesztés",

@@ -26,9 +26,15 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const page = getServicePage(params.slug);
   if (!page) return {};
+  
+  // Imporoljuk a kulcsszavakat a data/keywords-ből (dinamikusan, de itt is beimportálhatjuk, 
+  // vagy fájl szinten, de a Next.js generateMetadata-ban is hivatkozhatunk rá)
+  const { SERVICE_KEYWORDS } = await import("@/data/keywords");
+
   return {
     title: page.metaTitle,
     description: page.metaDescription,
+    keywords: SERVICE_KEYWORDS[params.slug] || [],
     openGraph: {
       title: page.metaTitle,
       description: page.metaDescription,

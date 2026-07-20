@@ -63,7 +63,7 @@ export const SERVICE_PAGES: ServiceDetailPage[] = [
   // ───────────────────────────── WEBFEJLESZTÉS ─────────────────────────────
   {
     slug: "webfejlesztes",
-    accent: "red",
+    accent: "green",
     icon: "globe",
     eyebrow: "WEBFEJLESZTÉS",
     headline: "Nem sablon. Üzleti eszköz.",
@@ -216,7 +216,7 @@ export const SERVICE_PAGES: ServiceDetailPage[] = [
   // ───────────────────────────── CRM ─────────────────────────────
   {
     slug: "crm-fejlesztes",
-    accent: "red",
+    accent: "green",
     icon: "users",
     eyebrow: "CRM FEJLESZTÉS",
     headline: "Ügyfélkezelés, ami a te logikádat követi.",
@@ -368,7 +368,7 @@ export const SERVICE_PAGES: ServiceDetailPage[] = [
   // ───────────────────────────── MOBILALKALMAZÁS ─────────────────────────────
   {
     slug: "mobilalkalmazas",
-    accent: "red",
+    accent: "green",
     icon: "smartphone",
     eyebrow: "MOBILALKALMAZÁS",
     headline: "iOS és Android — egy kódbázisból.",

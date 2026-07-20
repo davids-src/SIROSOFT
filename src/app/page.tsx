@@ -1,27 +1,25 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
-import { Process } from "@/components/Process";
+import { ProcessStrip } from "@/components/ProcessStrip";
 import { TechStack } from "@/components/TechStack";
-import { References } from "@/components/References";
 import { WhySirosoft } from "@/components/WhySirosoft";
 import { ContactCTA } from "@/components/ContactCTA";
-import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { PartnerStrip } from "@/components/PartnerStrip";
 
 export default function Home() {
   return (
-    <div className="bg-siro-bg font-body text-siro-text" data-testid="sirosoft-app">
+    <div className="bg-[#0A0A0C] font-body text-ink" data-testid="sirosoft-app">
       <Navbar />
       <main>
         <Hero />
+        <PartnerStrip />
         <Services />
-        <Process />
+        <ProcessStrip />
         <TechStack />
-        <References />
         <WhySirosoft />
         <ContactCTA />
-        <Contact />
       </main>
       <Footer />
     </div>

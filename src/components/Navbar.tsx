@@ -36,17 +36,23 @@ export const Navbar = () => {
   return (
     <header
       data-testid="navbar"
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-150 ${
         scrolled
-          ? "border-b border-siro-border bg-siro-bg/85 backdrop-blur-xl"
+          ? "border-b border-line/60 bg-bg/80 backdrop-blur-xl"
           : "border-b border-transparent bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex h-16 max-w-site items-center justify-between px-5 lg:px-8">
+      <nav className="mx-auto flex h-16 max-w-site items-center justify-between px-6">
         <Logo onClick={() => go(SECTION_IDS.hero)} />
 
         {/* Desktop nav */}
         <div className="hidden items-center gap-1 lg:flex">
+          <Link
+            href="/"
+            className="rounded px-3 py-2 text-sm text-muted transition-colors duration-150 hover:text-ink"
+          >
+            Kezdőlap
+          </Link>
           <div
             className="relative"
             onMouseEnter={() => setServicesOpen(true)}
@@ -55,15 +61,15 @@ export const Navbar = () => {
             <button
               data-testid="nav-services-trigger"
               onClick={() => go(SECTION_IDS.services)}
-              className="flex items-center gap-1 rounded px-3 py-2 text-sm text-siro-muted transition-colors hover:text-siro-text"
+              className="flex items-center gap-1 rounded px-3 py-2 text-sm text-muted transition-colors duration-150 hover:text-ink"
             >
               {NAV.servicesLabel}
-              <ChevronDown size={15} className={`transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
+              <ChevronDown size={15} className={`transition-transform duration-150 ${servicesOpen ? "rotate-180" : ""}`} />
             </button>
             {servicesOpen && (
               <div
                 data-testid="nav-services-dropdown"
-                className="absolute left-0 top-full w-60 overflow-hidden rounded-lg border border-siro-border bg-siro-bg2 p-1.5 shadow-2xl"
+                className="absolute left-0 top-full w-60 overflow-hidden rounded-lg border border-line bg-panel p-1.5 shadow-2xl shadow-black/60"
               >
                 {NAV.servicesDropdown.map((item) => (
                   <Link
@@ -71,8 +77,9 @@ export const Navbar = () => {
                     href={`/szolgaltatasok/${SERVICE_SLUGS[item.id] ?? item.id}`}
                     data-testid={`nav-dropdown-${item.id}`}
                     onClick={() => { setMobileOpen(false); setServicesOpen(false); }}
-                    className="block w-full rounded px-3 py-2 text-left text-sm text-siro-muted transition-colors hover:bg-siro-bg3 hover:text-siro-text"
+                    className="flex w-full items-center gap-2.5 rounded px-3 py-2 text-left text-sm text-muted transition-colors duration-150 hover:bg-surface hover:text-ink"
                   >
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#1AE87B] shadow-[0_0_8px_#1AE87B]" />
                     {item.label}
                   </Link>
                 ))}
@@ -80,41 +87,40 @@ export const Navbar = () => {
             )}
           </div>
 
-          {NAV.links.map((link) => (
-            <button
-              key={link.target}
-              data-testid={`nav-link-${link.target}`}
-              onClick={() => go(link.target)}
-              className="rounded px-3 py-2 text-sm text-siro-muted transition-colors hover:text-siro-text"
-            >
-              {link.label}
-            </button>
-          ))}
+          <Link href="/referenciak" className="rounded px-3 py-2 text-sm text-muted transition-colors duration-150 hover:text-ink">
+            Referenciák
+          </Link>
+          <Link href="/folyamat" className="rounded px-3 py-2 text-sm text-muted transition-colors duration-150 hover:text-ink">
+            Folyamat
+          </Link>
+          <Link href="/kapcsolat" className="rounded px-3 py-2 text-sm text-muted transition-colors duration-150 hover:text-ink">
+            Kapcsolat
+          </Link>
         </div>
 
         <div className="flex items-center gap-3">
-          <div className="hidden items-center gap-1 rounded border border-siro-border px-1 py-0.5 font-mono text-xs sm:flex">
-            <span className="rounded bg-siro-red/15 px-2 py-1 font-semibold text-siro-red" data-testid="lang-hu">HU</span>
+          <div className="hidden items-center gap-1 rounded border border-line bg-surface px-1 py-0.5 font-mono text-xs sm:flex">
+            <span className="rounded-sm bg-[#1AE87B]/12 border border-[#1AE87B]/40 px-2 py-0.5 font-semibold text-[#1AE87B]" data-testid="lang-hu">HU</span>
             <button
               data-testid="lang-en"
               title="English – hamarosan"
-              className="cursor-not-allowed px-2 py-1 text-siro-muted/60"
+              className="cursor-not-allowed px-2 py-0.5 text-muted/60"
             >
               EN
             </button>
           </div>
 
-          <button
+          <Link
+            href="/kapcsolat"
             data-testid="navbar-cta"
-            onClick={() => go(SECTION_IDS.contact)}
-            className="hidden rounded-[4px] bg-siro-red px-4 py-2 text-sm font-semibold text-white transition-all duration-200 hover:bg-[#ff352a] hover:shadow-glow-red sm:inline-flex"
+            className="hidden rounded bg-[#1AE87B] px-5 py-2 text-sm font-semibold text-[#0A0A0C] transition-transform duration-150 ease-out hover:scale-[1.02] sm:inline-flex"
           >
             {NAV.cta}
-          </button>
+          </Link>
 
           <button
             data-testid="mobile-menu-toggle"
-            className="text-siro-text lg:hidden"
+            className="text-ink lg:hidden"
             onClick={() => setMobileOpen((v) => !v)}
             aria-label="Menü"
           >
@@ -125,36 +131,44 @@ export const Navbar = () => {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div data-testid="mobile-menu" className="border-t border-siro-border bg-siro-bg2 px-5 py-4 lg:hidden">
+        <div data-testid="mobile-menu" className="border-t border-line bg-surface px-6 py-4 lg:hidden">
           <div className="flex flex-col gap-1">
-            <div className="px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-siro-muted">Szolgáltatások</div>
+            <Link
+              href="/"
+              onClick={() => setMobileOpen(false)}
+              className="rounded px-3 py-2.5 text-left text-sm text-muted hover:text-ink"
+            >
+              Kezdőlap
+            </Link>
+            <div className="mt-2 px-3 py-1 font-mono text-xs font-semibold uppercase tracking-[0.12em] text-muted">Szolgáltatások</div>
             {NAV.servicesDropdown.map((item) => (
               <Link
                 key={item.id}
                 href={`/szolgaltatasok/${SERVICE_SLUGS[item.id] ?? item.id}`}
                 onClick={() => setMobileOpen(false)}
-                className="rounded px-3 py-2 text-left text-sm text-siro-muted hover:text-siro-text"
+                className="flex items-center gap-2.5 rounded px-3 py-2 text-left text-sm text-muted hover:text-ink"
               >
+                <span className="h-1.5 w-1.5 rounded-full bg-[#1AE87B] shadow-[0_0_8px_#1AE87B]" />
                 {item.label}
               </Link>
             ))}
-            <div className="my-1 border-t border-siro-border" />
-            {NAV.links.map((link) => (
-              <button
-                key={link.target}
-                onClick={() => go(link.target)}
-                className="rounded px-3 py-2.5 text-left text-sm text-siro-muted hover:text-siro-text"
-              >
-                {link.label}
-              </button>
-            ))}
-            <button
-              data-testid="mobile-cta"
-              onClick={() => go(SECTION_IDS.contact)}
-              className="mt-2 rounded-[4px] bg-siro-red px-4 py-3 text-center text-sm font-semibold text-white"
+            <div className="my-1 border-t border-line" />
+            <Link href="/referenciak" onClick={() => setMobileOpen(false)} className="rounded px-3 py-2.5 text-left text-sm text-muted hover:text-ink">
+              Referenciák
+            </Link>
+            <Link href="/folyamat" onClick={() => setMobileOpen(false)} className="rounded px-3 py-2.5 text-left text-sm text-muted hover:text-ink">
+              Folyamat
+            </Link>
+            <Link href="/kapcsolat" onClick={() => setMobileOpen(false)} className="rounded px-3 py-2.5 text-left text-sm text-muted hover:text-ink">
+              Kapcsolat
+            </Link>
+            <Link
+              href="/kapcsolat"
+              onClick={() => setMobileOpen(false)}
+              className="mt-2 block rounded bg-[#1AE87B] px-4 py-3 text-center text-sm font-semibold text-[#0A0A0C] transition-transform duration-150 ease-out hover:scale-[1.02]"
             >
               {NAV.cta}
-            </button>
+            </Link>
           </div>
         </div>
       )}

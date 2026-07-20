@@ -6,25 +6,35 @@ import { scrollToId } from "@/lib/scroll";
 
 export const ContactCTA = () => {
   return (
-    <section data-testid="contact-cta-section" className="py-20">
-      <div className="mx-auto max-w-site px-5 lg:px-8">
+    <section className="py-16">
+      <div className="mx-auto max-w-site px-6">
         <Reveal>
-          <div className="relative overflow-hidden rounded-2xl border border-siro-border bg-siro-bg2 px-6 py-16 text-center lg:px-16">
-            <div className="pointer-events-none absolute inset-0 grid-bg opacity-30" />
-            <div className="pointer-events-none absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(232,39,26,0.18),transparent_70%)]" />
-            <div className="relative">
-              <h2 className="mx-auto max-w-2xl font-display text-3xl font-semibold tracking-tight text-siro-text sm:text-4xl text-balance">
+          <div
+            data-testid="contact-cta-card"
+            className="relative overflow-hidden rounded-lg border border-line bg-surface px-6 py-16 text-center lg:px-16"
+          >
+            <div className="pointer-events-none absolute -right-20 -top-20 h-80 w-80 rounded-full bg-[radial-gradient(circle,rgba(26,232,123,0.15),transparent_70%)]" />
+            <div className="pointer-events-none absolute -bottom-20 -left-20 h-80 w-80 rounded-full bg-[radial-gradient(circle,rgba(26,232,123,0.10),transparent_70%)]" />
+
+            <div className="relative mx-auto max-w-2xl">
+              <span className="label block text-xs font-semibold uppercase tracking-[0.12em] text-[#1AE87B]">
+                KAPCSOLAT
+              </span>
+              <h2 className="mt-6 font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl leading-[1.15]">
                 {CONTACT_CTA.headline}
               </h2>
-              <p className="mx-auto mt-4 max-w-xl text-base leading-[1.7] text-siro-muted">{CONTACT_CTA.subheadline}</p>
-              <button
-                data-testid="contact-cta-button"
-                onClick={() => scrollToId(SECTION_IDS.contact)}
-                className="mt-8 rounded-[4px] bg-siro-red px-8 py-4 text-sm font-semibold text-white transition-all duration-200 hover:bg-[#ff352a] hover:shadow-glow-red"
-              >
-                {CONTACT_CTA.cta}
-              </button>
-              <p className="mt-4 font-mono text-xs text-siro-muted">{CONTACT_CTA.note}</p>
+              <p className="mt-5 text-base leading-[1.7] text-muted">
+                {CONTACT_CTA.subheadline}
+              </p>
+              <div className="mt-9">
+                <button
+                  data-testid="contact-cta-button"
+                  onClick={() => scrollToId(SECTION_IDS.contact)}
+                  className="rounded bg-[#1AE87B] px-8 py-4 text-sm font-semibold text-[#0A0A0C] transition-transform duration-150 ease-out hover:scale-[1.02]"
+                >
+                  {CONTACT_CTA.cta}
+                </button>
+              </div>
             </div>
           </div>
         </Reveal>
