@@ -76,7 +76,7 @@ export const HERO = {
   headline: ["A szoftver amit", "keresel, még nem", "létezik. Mi megírjuk."],
   subheadline:
     "Weboldaltól ERP rendszerig, mobilapptól belső ügyviteli platformig — minden megoldást az ügyfél folyamataira szabunk. Nem sablon. Nem kompromisszum.",
-  primaryCta: "Projekt megbeszélése →",
+  primaryCta: "Ingyenes konzultáció →",
   secondaryCta: "Referenciáink",
   terminalLines: [
     "> project_init: új_ügyviteli_rendszer",
@@ -225,18 +225,6 @@ export const REFERENCES: { eyebrow: string; headline: string; cards: ReferenceCa
       industry: "IT szolgáltatás",
       description: "Egyedi CRM rendszer modulokkal: kapcsolatok, projektek, ticketek, munkanaplók, raktár, ajánlatok, számlák (Billingo integráció), szerződések.",
       tech: ["Next.js", "MongoDB", "Docker", "TypeScript", "Billingo API"],
-    },
-    {
-      name: "Mélyépítési ERP javaslat",
-      industry: "Építőipar",
-      description: "7 modulból álló ERP rendszer tervezés és specifikáció kivitelező cégnek. Projekt-, HR-, raktár-, pénzügyi és dokumentumkezelő modul.",
-      tech: ["Next.js", "PostgreSQL", "Node.js"],
-    },
-    {
-      name: "Cabinova – Prémium ingatlan bemutató oldal",
-      industry: "Ingatlan / Moduláris otthonok",
-      description: "Prémium moduláris ház projekt weboldala, lead generálásra optimalizálva.",
-      tech: ["Next.js", "Tailwind CSS", "TypeScript"],
     },
   ],
 };

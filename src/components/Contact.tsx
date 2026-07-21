@@ -17,6 +17,7 @@ interface ContactFormState {
   services: string[];
   description: string;
   budget: string;
+  acceptPrivacy: boolean;
 }
 
 type FormErrors = Partial<Record<keyof ContactFormState, string>>;
@@ -29,6 +30,7 @@ const initial: ContactFormState = {
   services: [],
   description: "",
   budget: "",
+  acceptPrivacy: false,
 };
 
 export const Contact = () => {
@@ -56,6 +58,7 @@ export const Contact = () => {
     if (!form.contact_name.trim()) e.contact_name = "Kötelező mező";
     if (!form.email.trim()) e.email = "Kötelező mező";
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = "Érvénytelen e-mail cím";
+    if (!form.acceptPrivacy) e.acceptPrivacy = "Az adatkezelési tájékoztató elfogadása kötelező";
     setErrors(e);
     return Object.keys(e).length === 0;
   };
@@ -243,6 +246,22 @@ export const Contact = () => {
                     ))}
                   </select>
                 </div>
+
+                {/* Privacy Checkbox */}
+                <div className="mt-6 flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    id="acceptPrivacy"
+                    data-testid="input-privacy"
+                    className="mt-1 shrink-0 accent-[#1AE87B]"
+                    checked={form.acceptPrivacy}
+                    onChange={(e) => set("acceptPrivacy", e.target.checked)}
+                  />
+                  <label htmlFor="acceptPrivacy" className="text-xs text-muted">
+                    Elolvastam és elfogadom az <a href="/adatkezelesi" target="_blank" rel="noopener noreferrer" className="text-ink underline hover:text-[#1AE87B]">Adatkezelési tájékoztatót</a> és az <a href="/aszf" target="_blank" rel="noopener noreferrer" className="text-ink underline hover:text-[#1AE87B]">ÁSZF</a>-et. *
+                  </label>
+                </div>
+                {errors.acceptPrivacy && <p className="mt-1 text-xs text-[#E8271A]">{errors.acceptPrivacy}</p>}
 
                 <button
                   type="submit"

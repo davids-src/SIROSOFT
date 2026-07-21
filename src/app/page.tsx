@@ -6,7 +6,7 @@ import { TechStack } from "@/components/TechStack";
 import { WhySirosoft } from "@/components/WhySirosoft";
 import { ContactCTA } from "@/components/ContactCTA";
 import { Footer } from "@/components/Footer";
-import { PartnerStrip } from "@/components/PartnerStrip";
+// import { PartnerStrip } from "@/components/PartnerStrip";
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <PartnerStrip />
+        {/* <PartnerStrip /> */}
         <Services />
         <ProcessStrip />
         <TechStack />

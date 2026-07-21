@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Terminal } from "./Terminal";
 import { HERO, SECTION_IDS } from "@/data/content";
 import { scrollToId } from "@/lib/scroll";
+import Link from "next/link";
 
 export const Hero = () => {
   return (
@@ -70,13 +71,13 @@ export const Hero = () => {
             >
               {HERO.primaryCta}
             </button>
-            <button
+            <Link
+              href="/referenciak"
               data-testid="hero-secondary-cta"
-              onClick={() => scrollToId(SECTION_IDS.references)}
-              className="rounded border border-line px-6 py-3 text-sm font-semibold text-ink transition-colors duration-150 hover:border-silver"
+              className="inline-flex justify-center items-center rounded border border-line px-6 py-3 text-sm font-semibold text-ink transition-colors duration-150 hover:border-silver"
             >
               {HERO.secondaryCta}
-            </button>
+            </Link>
           </motion.div>
 
           <motion.div

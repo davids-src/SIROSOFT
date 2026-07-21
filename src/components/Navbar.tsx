@@ -99,6 +99,7 @@ export const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-3">
+          {/* 
           <div className="hidden items-center gap-1 rounded border border-line bg-surface px-1 py-0.5 font-mono text-xs sm:flex">
             <span className="rounded-sm bg-[#1AE87B]/12 border border-[#1AE87B]/40 px-2 py-0.5 font-semibold text-[#1AE87B]" data-testid="lang-hu">HU</span>
             <button
@@ -109,6 +110,7 @@ export const Navbar = () => {
               EN
             </button>
           </div>
+          */}
 
           <Link
             href="/kapcsolat"
