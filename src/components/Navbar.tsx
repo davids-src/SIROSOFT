@@ -90,6 +90,9 @@ export const Navbar = () => {
           <Link href="/referenciak" className="rounded px-3 py-2 text-sm text-muted transition-colors duration-150 hover:text-ink">
             Referenciák
           </Link>
+          <Link href="/rolunk" className="rounded px-3 py-2 text-sm text-muted transition-colors duration-150 hover:text-ink">
+            Rólunk
+          </Link>
           <Link href="/folyamat" className="rounded px-3 py-2 text-sm text-muted transition-colors duration-150 hover:text-ink">
             Folyamat
           </Link>
@@ -157,6 +160,9 @@ export const Navbar = () => {
             <div className="my-1 border-t border-line" />
             <Link href="/referenciak" onClick={() => setMobileOpen(false)} className="rounded px-3 py-2.5 text-left text-sm text-muted hover:text-ink">
               Referenciák
+            </Link>
+            <Link href="/rolunk" onClick={() => setMobileOpen(false)} className="rounded px-3 py-2.5 text-left text-sm text-muted hover:text-ink">
+              Rólunk
             </Link>
             <Link href="/folyamat" onClick={() => setMobileOpen(false)} className="rounded px-3 py-2.5 text-left text-sm text-muted hover:text-ink">
               Folyamat

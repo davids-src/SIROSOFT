@@ -286,7 +286,7 @@ export const CONTACT: {
 export const FOOTER = {
   navLinks: [
     "Webfejlesztés", "Belső rendszerek", "CRM fejlesztés", "ERP fejlesztés",
-    "Mobilalkalmazás", "Referenciák", "Kapcsolat", "Adatvédelem",
+    "Mobilalkalmazás", "Referenciák", "Rólunk", "Kapcsolat", "Adatvédelem",
   ],
   legal: "© 2026 SIROSOFT – SIROTECH Informatikai és Biztonságtechnikai Kft.",
   note: "A SIROSOFT a SIROTECH Kft. szoftverfejlesztési divíziója.",
