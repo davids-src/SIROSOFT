@@ -3,6 +3,10 @@ import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import { MotionConfig } from "framer-motion";
 import "./globals.css";
 import { SonnerToaster } from "@/components/SonnerToaster";
+import { SEO_KEYWORDS } from "@/data/keywords";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { CookieBanner } from "@/components/CookieBanner";
+import { OrganizationJsonLd } from "@/components/JsonLd";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -25,15 +29,15 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-import { SEO_KEYWORDS } from "@/data/keywords";
-import { GoogleAnalytics } from "@next/third-parties/google";
-
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://sirosoft.hu"),
   title: "SIROSOFT – Egyedi szoftverfejlesztés | CRM, ERP, weboldal, mobilapp",
   keywords: SEO_KEYWORDS,
   description:
     "SIROSOFT – Egyedi szoftverfejlesztés: CRM, ERP, weboldal, belső rendszerek és mobilalkalmazás kkv-knak és nagyvállalatoknak.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "SIROSOFT – Egyedi szoftverfejlesztés",
     description:
@@ -61,8 +65,10 @@ export default function RootLayout({
         <MotionConfig reducedMotion="user">
           {children}
           <SonnerToaster />
+          <CookieBanner />
         </MotionConfig>
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || "G-3B386FTH85"} />
+        <GoogleAnalytics />
+        <OrganizationJsonLd />
       </body>
     </html>
   );

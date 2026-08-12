@@ -4,6 +4,7 @@ import { getServicePage, SERVICE_PAGES } from "@/data/services-detail";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ServicePageHero } from "@/components/ServicePageHero";
+import { ServiceJsonLd } from "@/components/JsonLd";
 import {
   ServiceWhatIs,
   ServiceUseCases,
@@ -27,14 +28,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const page = getServicePage(params.slug);
   if (!page) return {};
   
-  // Imporoljuk a kulcsszavakat a data/keywords-ből (dinamikusan, de itt is beimportálhatjuk, 
-  // vagy fájl szinten, de a Next.js generateMetadata-ban is hivatkozhatunk rá)
   const { SERVICE_KEYWORDS } = await import("@/data/keywords");
 
   return {
     title: page.metaTitle,
     description: page.metaDescription,
     keywords: SERVICE_KEYWORDS[params.slug] || [],
+    alternates: {
+      canonical: `/szolgaltatasok/${params.slug}`,
+    },
     openGraph: {
       title: page.metaTitle,
       description: page.metaDescription,
@@ -47,6 +49,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default function ServicePage({ params }: PageProps) {
   const page = getServicePage(params.slug);
   if (!page) notFound();
+
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sirosoft.hu";
 
   return (
     <div className="bg-siro-bg font-body text-siro-text">
@@ -62,6 +66,11 @@ export default function ServicePage({ params }: PageProps) {
         <ServiceFAQ page={page} />
         <ServiceCTA page={page} />
       </main>
+      <ServiceJsonLd
+        name={page.eyebrow}
+        description={page.metaDescription}
+        url={`${baseUrl}/szolgaltatasok/${page.slug}`}
+      />
       <Footer />
     </div>
   );

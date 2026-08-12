@@ -5,7 +5,10 @@ import { ContactCTA } from "@/components/ContactCTA";
 
 export const metadata: Metadata = {
   title: "Folyamatunk | SIROSOFT",
-  description: "Megismerjük az igényedet, specifikáljuk, fejlesztjük, átadjuk és üzemeltetjük — teljes körű szoftverfejlesztési folyamat.",
+  description: "Megismerjük az igényét, specifikáljuk, fejlesztjük, átadjuk és üzemeltetjük — teljes körű szoftverfejlesztési folyamat.",
+  alternates: {
+    canonical: "/folyamat",
+  },
 };
 
 const PROCESS_STEPS = [
@@ -13,12 +16,12 @@ const PROCESS_STEPS = [
     number: "01",
     title: "Igényfelmérés",
     subtitle: "Ingyenes, kötelezettségmentes konzultáció",
-    body: "Megismerjük a céged folyamatait, a jelenlegi fájdalompontokat, a célokat és a korlátokat. Nem sablonjainkat próbáljuk rád erőltetni — az igényeidre szabjuk a megoldást.",
+    body: "Megismerjük a cége folyamatait, a jelenlegi fájdalompontokat, a célokat és a korlátokat. Nem sablonjainkat próbáljuk Önre erőltetni — az igényeire szabjuk a megoldást.",
     duration: "1–2 alkalom",
     output: "Projekt scope összefoglaló",
     icon: "01",
     details: [
-      "Videóhíváson vagy személyesen — ahogy neked kényelmes",
+      "Videóhíváson vagy személyesen — ahogy Önnek kényelmes",
       "Feltérképezzük a meglévő rendszereket és integrációs pontokat",
       "Prioritizáljuk a funkciókat: Mi a legfontosabb most?",
       "Reális időkeret és büdzsé becslés",
@@ -43,7 +46,7 @@ const PROCESS_STEPS = [
     number: "03",
     title: "Sprint alapú fejlesztés",
     subtitle: "Átlátható, iteratív fejlesztési folyamat",
-    body: "1–2 hetes sprintekben dolgozunk. Minden sprint végén demo — mindig látod, hol tartunk. Nem tűnünk el hónapokra, és nem hozunk át meglévőket kész tényként.",
+    body: "1–2 hetes sprintekben dolgozunk. Minden sprint végén demo — mindig látja, hol tartunk. Nem tűnünk el hónapokra, és nem hozunk át meglévőket kész tényként.",
     duration: "4–20+ hét (projekttől függően)",
     output: "Tesztelhető szoftver sprintenként",
     icon: "03",
@@ -89,11 +92,11 @@ const PROCESS_STEPS = [
 const PRINCIPLES = [
   {
     title: "Nincs fekete doboz",
-    body: "Minden döntésünkről tájékoztatunk. A kód tiéd, a dokumentáció tiéd — nem vagyunk fogva tartó.",
+    body: "Minden döntésünkről tájékoztatunk. A kód az Önöké, a dokumentáció az Önöké — nem vagyunk fogva tartó.",
   },
   {
     title: "Embereknek szól",
-    body: "Nem technológiai fitogtatás, hanem megoldás az üzleti problémádra. Ha valami simábbá tehető, megmondjuk.",
+    body: "Nem technológiai fitogtatás, hanem megoldás az Ön üzleti problémájára. Ha valami simábbá tehető, megmondjuk.",
   },
   {
     title: "Fix határidők, reális becslések",

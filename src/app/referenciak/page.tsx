@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Referenciák | SIROSOFT",
   description:
     "Megvalósított weboldalak, platformok és rendszerek: Magyar Darts Szövetség, Boathungary, Erdweg Kft., Event Structure Agency, tDarts és több ügyfél-projektünk.",
+  alternates: {
+    canonical: "/referenciak",
+  },
 };
 
 // Az erdweg.hu véglegesítésekor elegendő az env változót átírni.
@@ -219,7 +222,7 @@ export default function Referenciak() {
                 Nyilvánosan is elérhető munkáink
               </h2>
               <p className="mt-3 max-w-xl text-base leading-[1.7] text-muted">
-                Kattints bármelyik kártyára az éles oldal megtekintéséhez.
+                Kattintson bármelyik kártyára az éles oldal megtekintéséhez.
               </p>
             </div>
 

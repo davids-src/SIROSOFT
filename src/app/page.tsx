@@ -4,9 +4,10 @@ import { Services } from "@/components/Services";
 import { ProcessStrip } from "@/components/ProcessStrip";
 import { TechStack } from "@/components/TechStack";
 import { WhySirosoft } from "@/components/WhySirosoft";
+import { TeamSection } from "@/components/TeamSection";
+import { Testimonials } from "@/components/Testimonials";
 import { ContactCTA } from "@/components/ContactCTA";
 import { Footer } from "@/components/Footer";
-// import { PartnerStrip } from "@/components/PartnerStrip";
 
 export default function Home() {
   return (
@@ -14,11 +15,12 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        {/* <PartnerStrip /> */}
         <Services />
         <ProcessStrip />
         <TechStack />
         <WhySirosoft />
+        <TeamSection />
+        <Testimonials />
         <ContactCTA />
       </main>
       <Footer />

@@ -16,7 +16,10 @@ import {
 export const metadata: Metadata = {
   title: "Rólunk | SIROSOFT – Egyedi szoftverfejlesztő csapat",
   description:
-    "Ismerd meg a SIROSOFT mögött álló csapatot: Skoda Dávid és Tóth Tamás történetét, küldetésünket és értékeinket. Szoftverfejlesztés, CRM, ERP és weboldalak kkv-knak.",
+    "Ismerje meg a SIROSOFT mögött álló csapatot: Skoda Dávid és Tóth Tamás történetét, küldetésünket és értékeinket. Szoftverfejlesztés, CRM, ERP és weboldalak kkv-knak.",
+  alternates: {
+    canonical: "/rolunk",
+  },
 };
 
 // ── Founder adatok ─────────────────────────────────────────────────────────────
@@ -93,11 +96,11 @@ const MILESTONES = [
 // ── GYIK ──────────────────────────────────────────────────────────────────────
 const FAQS = [
   {
-    q: "Hol található a csapatotok?",
-    a: "Székhelyünk Székesfehérváron van (8000, Lövölde utca 24), de munkánk döntő részét távolról végezzük, így az ország bármely pontján lévő ügyféllel tudunk együttdolgozni.",
+    q: "Hol található a csapatuk?",
+    a: "Székhelyünk Székesfehérváron van (8000, Lövölde utca 24), de munkánk döntő részét távolról végezzük, így az ország bármely pontján lévő ügyféllel tudunk együtt dolgozni.",
   },
   {
-    q: "Milyen méretű projekteket vállaltok?",
+    q: "Milyen méretű projekteket vállalnak?",
     a: "Kis landing oldaltól komplex, moduláris ERP/CRM rendszerig mindent. Fontos számunkra, hogy ne vállaljunk túl sokat — amit elvállalunk, azt maradéktalanul teljesítjük.",
   },
   {
@@ -105,7 +108,7 @@ const FAQS = [
     a: "Ingyenes konzultációval kezdünk: megismerjük az igényeket, feltérképezzük a folyamatokat, majd részletes ajánlatot adunk. Nincs kötelezettség az első meetingen.",
   },
   {
-    q: "Milyen technológiákkal dolgoztok?",
+    q: "Milyen technológiákkal dolgoznak?",
     a: "Főként Next.js, TypeScript, React, Node.js és MongoDB alapú stack-et használunk. Mobilon React Native-et. Az infrastruktúra Docker-alapú, Cloudflare-rel védett VPS-en fut.",
   },
   {
@@ -113,12 +116,12 @@ const FAQS = [
     a: "Igen. Minden projekthez garanciális időszakot és opcionális karbantartási csomagot biztosítunk. Az ügyfeleink tudják, hogy nem tűnünk el az átadás után.",
   },
   {
-    q: "Dolgoztok NDA alatt?",
-    a: "Természetesen. Titoktartási megállapodás (NDA) aláírásával kezdünk minden komolyabb tárgyalást — az ügyfelek adatai és üzleti titkait maximálisan védjük.",
+    q: "Dolgoznak NDA alatt?",
+    a: "Természetesen. Titoktartási megállapodás (NDA) aláírásával kezdünk minden komolyabb tárgyalást — az ügyfelek adatait és üzleti titkait maximálisan védjük.",
   },
   {
-    q: "Mikor tudtok elkezdeni egy projektet?",
-    a: "Jelenlegi kapacitásainktól függően általában 2–4 hetes szabad időpontunk van. Sürgős esetben vegyél fel velünk kapcsolatot, és megnézzük a lehetőségeket.",
+    q: "Mikor tudnak elkezdeni egy projektet?",
+    a: "Jelenlegi kapacitásainktól függően általában 2–4 hetes szabad időpontunk van. Sürgős esetben vegye fel velünk a kapcsolatot, és megnézzük a lehetőségeket.",
   },
   {
     q: "Lehet-e részletfizetés?",
@@ -176,7 +179,7 @@ export default function Rolunk() {
                   href="/kapcsolat"
                   className="rounded bg-[#1AE87B] px-6 py-3 text-sm font-semibold text-[#0A0A0C] transition-transform duration-150 ease-out hover:scale-[1.02]"
                 >
-                  Írj nekünk
+                  Írjon nekünk
                 </Link>
                 <Link
                   href="/referenciak"
@@ -347,7 +350,7 @@ export default function Rolunk() {
                 Gyakran ismételt kérdések
               </h2>
               <p className="mt-3 max-w-xl text-base leading-[1.7] text-muted">
-                Ha nem találod a választ, írj nekünk — szívesen segítünk.
+                Ha nem találja a választ, írjon nekünk — szívesen segítünk.
               </p>
             </Reveal>
 
@@ -362,12 +365,12 @@ export default function Rolunk() {
             <Reveal delay={0.1}>
               <div className="mt-12 text-center">
                 <p className="text-sm text-muted">
-                  Más kérdésed van?{" "}
+                  Más kérdése van?{" "}
                   <Link
                     href="/kapcsolat"
                     className="font-semibold text-[#1AE87B] underline-offset-4 hover:underline"
                   >
-                    Lépj kapcsolatba velünk →
+                    Lépjen kapcsolatba velünk →
                   </Link>
                 </p>
               </div>
@@ -387,11 +390,11 @@ export default function Rolunk() {
                     Együttműködés
                   </span>
                   <h2 className="mt-6 font-display text-3xl font-bold tracking-[-0.02em] text-ink sm:text-4xl leading-[1.15]">
-                    Legyen a következő projekt a tiéd.
+                    Legyen a következő projekt az Önöké.
                   </h2>
                   <p className="mt-4 text-base leading-[1.7] text-muted">
                     Ingyenes, kötelezettség nélküli konzultáció — meghallgatjuk
-                    az ötleted és reális képet adunk a megvalósíthatóságról.
+                    az ötletét és reális képet adunk a megvalósíthatóságról.
                   </p>
                   <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
                     <Link

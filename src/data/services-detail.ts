@@ -124,12 +124,12 @@ export const SERVICE_PAGES: ServiceDetailPage[] = [
       { q: "Mennyi ideig tart egy weboldal elkészítése?", a: "Egy céges bemutatkozó oldal általában 4–6 hétig tart a brief jóváhagyásától az éles indításig. Nagyobb, webshop vagy CMS-integrációt tartalmazó projektek 8–14 hét." },
       { q: "Kell-e már meglévő tartalom, vagy segítenek abban is?", a: "Szöveges tartalom megírásában nem veszünk részt, de strukturálásban, SEO-szempontú átstrukturálásban igen. Copywriter partnerünket szívesen ajánljuk." },
       { q: "Mi történik az oldallal fejlesztés után?", a: "Opcionális karbantartási csomagot kínálunk (SIRONIC keretein belül): hosting felügyelet, biztonsági frissítések, kisebb módosítások havonta." },
-      { q: "Meg tudjátok valósítani a mi design-jainkat (Figma)?", a: "Igen, ha van meglévő brandkönyvetek vagy Figma tervetek, pontosan azt implementáljuk. Ha nincs, mi tervezzük meg." },
+      { q: "Meg tudják valósítani a mi design-jainkat (Figma)?", a: "Igen, ha van meglévő brandkönyvük vagy Figma tervük, pontosan azt implementáljuk. Ha nincs, mi tervezzük meg." },
       { q: "Mennyibe kerül egy egyedi weboldal?", a: "Egy alap céges weboldal 350.000–800.000 Ft-tól indul. Webshop vagy komplex portál esetén az ár projekt-specifikus — ingyenes konzultáción pontosítjuk." },
     ],
     cta: {
       headline: "Mutassuk meg, mit tud egy igazán jó weboldal",
-      body: "Ingyenes, 30 perces konzultáción átbeszéljük a céljaitokat és egy konkrét árajánlattal zárul a megbeszélés.",
+      body: "Ingyenes, 30 perces konzultáción átbeszéljük a céljait és egy konkrét árajánlattal zárul a megbeszélés.",
       button: "Ingyenes konzultációt kérek →",
     },
     metaTitle: "Egyedi Webfejlesztés B2B-nek | SIROSOFT",
@@ -145,11 +145,11 @@ export const SERVICE_PAGES: ServiceDetailPage[] = [
     eyebrow: "BELSŐ RENDSZEREK",
     headline: "Az Excel kora lejárt.",
     subheadline:
-      "Egyedi webalapú ügyviteli szoftverek, amelyek pontosan a te céged folyamatait követik — nem fordítva.",
+      "Egyedi webalapú ügyviteli szoftverek, amelyek pontosan az Ön cégének folyamatait követik — nem fordítva.",
     heroBadges: ["Egyedi ügyvitel", "Szerepkör-kezelés", "Riportok & dashboard", "Integrálható meglévő rendszerekbe"],
     whatIs: {
       title: "Mikor érdemes belső rendszert fejleszteni?",
-      body: "Ha a cégednél a napi munka jelentős része Excel-táblákban, e-mailekben vagy több különálló alkalmazásban zajlik — adatvesztés, emberi hiba és átláthatatlanság a következmény. Egy egyedi ügyviteli rendszer centralizálja az adatokat, automatizálja az ismétlődő feladatokat, és valós idejű képet ad az üzlet állapotáról. Nem generikus SaaS — pontosan annyi funkció, amennyire szükséged van.",
+      body: "Ha Önöknél a napi munka jelentős része Excel-táblákban, e-mailekben vagy több különálló alkalmazásban zajlik — adatvesztés, emberi hiba és átláthatatlanság a következmény. Egy egyedi ügyviteli rendszer centralizálja az adatokat, automatizálja az ismétlődő feladatokat, és valós idejű képet ad az üzlet állapotáról. Nem generikus SaaS — pontosan annyi funkció, amennyire szüksége van.",
     },
     useCases: [
       {
@@ -189,7 +189,7 @@ export const SERVICE_PAGES: ServiceDetailPage[] = [
     ],
     tech: ["Next.js", "Node.js", "MongoDB / PostgreSQL", "Redis", "Docker", "REST API", "Role-based Auth (NextAuth)"],
     roi: {
-      title: "Mit nyersz egy belső rendszerrel",
+      title: "Mit nyer egy belső rendszerrel",
       points: [
         "Heti 5–15 óra adminisztrációs idő megtakarítása csapatonként",
         "Emberi hibák és adatvesztés megszüntetése — minden adat egy helyen, verziókövetéssel",
@@ -204,13 +204,13 @@ export const SERVICE_PAGES: ServiceDetailPage[] = [
       { q: "Mi van, ha a folyamataink változnak?", a: "A rendszert modulárisan és dokumentáltan fejlesztjük — bővítés vagy módosítás bármikor elvégezhető, nem kell elölről kezdeni." },
     ],
     cta: {
-      headline: "Mutassuk meg, hogyan nézne ki a ti rendszeretek",
+      headline: "Mutassuk meg, hogyan nézne ki az Önök rendszere",
       body: "Egy ingyenes folyamatfeltáró egyeztetésen megmutatjuk, mit lehetne automatizálni és hozzávetőleges árat is mondunk.",
       button: "Ingyenes egyeztetést kérek →",
     },
     metaTitle: "Egyedi Belső Rendszerek & Ügyviteli Szoftver | SIROSOFT",
     metaDescription:
-      "Webalapú egyedi ügyviteli rendszerek: munkanapló, raktár, dokumentum, workflow — pontosan a ti folyamataitokra. Excel helyett valódi rendszer.",
+      "Webalapú egyedi ügyviteli rendszerek: munkanapló, raktár, dokumentum, workflow — pontosan az Önök folyamataira. Excel helyett valódi rendszer.",
   },
 
   // ───────────────────────────── CRM ─────────────────────────────
@@ -219,13 +219,13 @@ export const SERVICE_PAGES: ServiceDetailPage[] = [
     accent: "green",
     icon: "users",
     eyebrow: "CRM FEJLESZTÉS",
-    headline: "Ügyfélkezelés, ami a te logikádat követi.",
+    headline: "Ügyfélkezelés, ami az Ön logikáját követi.",
     subheadline:
-      "Egyedi CRM rendszer, ami pontosan azt tudja, amire szükséged van — felesleges funkciók és drága licensz nélkül.",
+      "Egyedi CRM rendszer, ami pontosan azt tudja, amire szüksége van — felesleges funkciók és drága licenc nélkül.",
     heroBadges: ["Egyedi pipeline", "Ajánlat & szerződéskezelés", "Email & naptár integráció", "Billingo API"],
     whatIs: {
       title: "Mikor nem elég egy dobozos CRM?",
-      body: "A Salesforce, HubSpot és hasonló megoldások erős eszközök — de a legtöbb kkv számára túl drágák, túl komplexek és nem illeszkednek a céges értékesítési logikához. Egy egyedi CRM csak azt tartalmazza, amire valóban szükség van: a saját pipeline-od, a saját státuszaid, a saját integrációid. Nincs felesleges funkció, nincs havi licensz-dzsungel.",
+      body: "A Salesforce, HubSpot és hasonló megoldások erős eszközök — de a legtöbb kkv számára túl drágák, túl komplexek és nem illeszkednek a céges értékesítési logikához. Egy egyedi CRM csak azt tartalmazza, amire valóban szükség van: a saját pipeline-ja, a saját státuszai, a saját integrációi. Nincs felesleges funkció, nincs havi licenc-dzsungel.",
     },
     useCases: [
       {
@@ -270,7 +270,7 @@ export const SERVICE_PAGES: ServiceDetailPage[] = [
         "Elveszett ajánlatok és follow-up lehetőségek visszaszerzése — automatikus emlékeztetőkkel",
         "Értékesítési ciklus rövidülése — minden adat egy helyen, kevesebb kérdezgetés",
         "Menedzsment valós rálátása a pipeline-ra — nem kell meetingekre várni",
-        "Nincs havi licensz-díj — egyszer megveszed, tied marad",
+        "Nincs havi licencdíj — egyszer megveszi, az Önélé marad",
       ],
     },
     faq: [
@@ -280,13 +280,13 @@ export const SERVICE_PAGES: ServiceDetailPage[] = [
       { q: "Lehet majd bővíteni?", a: "Moduláris architektúra — bármikor bővíthető új funkciókkal (pl. ajánlat-aláírás, projekt modul, számlázás)." },
     ],
     cta: {
-      headline: "Mutassuk meg, milyen lenne a saját CRM-etek",
-      body: "Egy ingyenes egyeztetésen átbeszéljük az értékesítési folyamatotokat és bemutatjuk, mit tudna a rendszer.",
+      headline: "Mutassuk meg, milyen lenne a saját CRM-jük",
+      body: "Egy ingyenes egyeztetésen átbeszéljük az értékesítési folyamatukat és bemutatjuk, mit tudna a rendszer.",
       button: "CRM egyeztetést kérek →",
     },
     metaTitle: "Egyedi CRM Fejlesztés B2B Cégeknek | SIROSOFT",
     metaDescription:
-      "Egyedi CRM rendszer fejlesztése: pipeline, ajánlatkezelés, Billingo integráció. Licensz nélkül, a saját üzleti logikátokra szabva.",
+      "Egyedi CRM rendszer fejlesztése: pipeline, ajánlatkezelés, Billingo integráció. Licenc nélkül, a saját üzleti logikájukra szabva.",
   },
 
   // ───────────────────────────── ERP ─────────────────────────────
@@ -352,17 +352,17 @@ export const SERVICE_PAGES: ServiceDetailPage[] = [
     faq: [
       { q: "Mekkora cégnél érdemes egyedi ERP-et fejleszteni?", a: "Általában 10–200 fős cégek esetén a legjobb az egyedi fejlesztés — ahol a dobozos megoldás már nem elég, a nagyvállalati ERP meg túl drága." },
       { q: "Meddig tart egy ERP bevezetése?", a: "Az első modul 8–14 hét. Teljes ERP rendszer 6–18 hónap, de az első fázis után már produktív a rendszer." },
-      { q: "Mi a különbség az egyedi és a dobozos ERP között?", a: "A dobozos ERP általánosra van optimalizálva — az egyedi a ti specifikus folyamataitokra. Nincs felesleges funkció, nincs havi licensz, és a jövőbeli módosítások is a ti igényeitek szerint alakíthatók." },
+      { q: "Mi a különbség az egyedi és a dobozos ERP között?", a: "A dobozos ERP általánosra van optimalizálva — az egyedi az Önök specifikus folyamataira. Nincs felesleges funkció, nincs havi licenc, és a jövőbeli módosítások is az Önök igényei szerint alakíthatók." },
       { q: "Integrálható meglévő rendszerekkel?", a: "Igen: NAV API, Billingo, webshop, egyéb ERP modulok vagy partnerrendszerek — API alapon összekötjük." },
     ],
     cta: {
       headline: "Kezdjük egy ingyenes folyamat-audittal",
-      body: "Megmutatjuk, hogy egy moduláris ERP hogyan nézne ki a ti cégeteknél — és mit spórolna meg.",
+      body: "Megmutatjuk, hogy egy moduláris ERP hogyan nézne ki az Önök cégénél — és mit spórolna meg.",
       button: "ERP konzultációt kérek →",
     },
     metaTitle: "Egyedi ERP Fejlesztés Kkv-knak | SIROSOFT",
     metaDescription:
-      "Moduláris ERP rendszer fejlesztése: raktár, termelés, pénzügy, HR — fázisos bevezetéssel, a saját folyamataitokra szabva. SAP nélkül.",
+      "Moduláris ERP rendszer fejlesztése: raktár, termelés, pénzügy, HR — fázisos bevezetéssel, a saját folyamataikra szabva. SAP nélkül.",
   },
 
   // ───────────────────────────── MOBILALKALMAZÁS ─────────────────────────────
@@ -377,7 +377,7 @@ export const SERVICE_PAGES: ServiceDetailPage[] = [
     heroBadges: ["React Native", "iOS + Android", "Offline működés", "App Store / Play Store"],
     whatIs: {
       title: "Mikor éri meg mobilalkalmazást fejleszteni?",
-      body: "Ha a felhasználóid rendszeresen mobilról végzik a munkát, ha offline funkcionalitásra van szükség, vagy ha push értesítések, kamera, GPS vagy más natív funkció nélkülözhetetlen — egy mobilalkalmazás egyértelműen jobb felhasználói élményt nyújt, mint egy responsive weboldal. React Native-vel egy kódbázisból iOS-re és Androidra is fejlesztünk.",
+      body: "Ha a felhasználók rendszeresen mobilról végzik a munkát, ha offline funkcionalitásra van szükség, vagy ha push értesítések, kamera, GPS vagy más natív funkció nélkülözhetetlen — egy mobilalkalmazás egyértelműen jobb felhasználói élményt nyújt, mint egy responsive weboldal. React Native-vel egy kódbázisból iOS-re és Androidra is fejlesztünk.",
     },
     useCases: [
       {
@@ -428,11 +428,11 @@ export const SERVICE_PAGES: ServiceDetailPage[] = [
     faq: [
       { q: "Mennyi ideig tart egy app fejlesztése?", a: "Egy MVP app (regisztráció, alapfunkciók, backend) 8–14 hét. Komplex alkalmazások 4–9 hónap." },
       { q: "Mi a különbség a natív és a React Native fejlesztés között?", a: "A natív fejlesztés (Swift/Kotlin) kétszer akkora munka, és nem feltétlenül jobb teljesítményt ad. React Native az esetek 95%-ában tökéletes — és kétszer olyan gyors fejlesztés." },
-      { q: "Az appot ti töltjük fel az App Store-ba?", a: "Mi kezeljük a teljes közzétételi folyamatot — App Store Connect és Google Play Console konfigurációt is beleértve. Csak egy Apple Developer és Google Play fiókra van szükség (évi ~30.000 Ft)." },
+      { q: "Az appot Önök vagy mi töltjük fel az App Store-ba?", a: "Mi kezeljük a teljes közzétételi folyamatot — App Store Connect és Google Play Console konfigurációt is beleértve. Csak egy Apple Developer és Google Play fiókra van szükség (évi ~30.000 Ft)." },
       { q: "Frissítések telepítéséhez a felhasználóknak kell csinálni valamit?", a: "Kisebb frissítéseket OTA (over-the-air) küldhetünk store-frissítés nélkül. Nagy frissítések új App Store / Play Store verziót igényelnek." },
     ],
     cta: {
-      headline: "Mutassuk meg, milyen lenne az appotok",
+      headline: "Mutassuk meg, milyen lenne az alkalmazásuk",
       body: "Egy ingyenes konzultáción átbeszéljük a célcsoportot, a funkciókat és reális határidőt és árat mondunk.",
       button: "App konzultációt kérek →",
     },
@@ -508,8 +508,8 @@ export const SERVICE_PAGES: ServiceDetailPage[] = [
       { q: "Mennyibe kerül egy egyedi integráció?", a: "Egy egyszerű API integráció 150.000–400.000 Ft. Komplex automatizációk, pipeline-ok projektfüggők — pontos árajánlathoz konzultáció szükséges." },
     ],
     cta: {
-      headline: "Van egy egyedi igényed? Beszéljük meg.",
-      body: "Nem szükséges kész specifikáció — elég elmondani, mit szeretnél elérni. Mi megmondjuk, hogyan valósítható meg.",
+      headline: "Van egy egyedi igénye? Beszéljük meg.",
+      body: "Nem szükséges kész specifikáció — elég elmondani, mit szeretne elérni. Mi megmondjuk, hogyan valósítható meg.",
       button: "Igényt egyeztetünk →",
     },
     metaTitle: "Egyedi Szoftver & API Integráció Fejlesztés | SIROSOFT",

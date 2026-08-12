@@ -96,25 +96,15 @@ export const Navbar = () => {
           <Link href="/folyamat" className="rounded px-3 py-2 text-sm text-muted transition-colors duration-150 hover:text-ink">
             Folyamat
           </Link>
+          <Link href="/blog" className="rounded px-3 py-2 text-sm text-muted transition-colors duration-150 hover:text-ink">
+            Blog
+          </Link>
           <Link href="/kapcsolat" className="rounded px-3 py-2 text-sm text-muted transition-colors duration-150 hover:text-ink">
             Kapcsolat
           </Link>
         </div>
 
         <div className="flex items-center gap-3">
-          {/* 
-          <div className="hidden items-center gap-1 rounded border border-line bg-surface px-1 py-0.5 font-mono text-xs sm:flex">
-            <span className="rounded-sm bg-[#1AE87B]/12 border border-[#1AE87B]/40 px-2 py-0.5 font-semibold text-[#1AE87B]" data-testid="lang-hu">HU</span>
-            <button
-              data-testid="lang-en"
-              title="English – hamarosan"
-              className="cursor-not-allowed px-2 py-0.5 text-muted/60"
-            >
-              EN
-            </button>
-          </div>
-          */}
-
           <Link
             href="/kapcsolat"
             data-testid="navbar-cta"
@@ -166,6 +156,9 @@ export const Navbar = () => {
             </Link>
             <Link href="/folyamat" onClick={() => setMobileOpen(false)} className="rounded px-3 py-2.5 text-left text-sm text-muted hover:text-ink">
               Folyamat
+            </Link>
+            <Link href="/blog" onClick={() => setMobileOpen(false)} className="rounded px-3 py-2.5 text-left text-sm text-muted hover:text-ink">
+              Blog
             </Link>
             <Link href="/kapcsolat" onClick={() => setMobileOpen(false)} className="rounded px-3 py-2.5 text-left text-sm text-muted hover:text-ink">
               Kapcsolat

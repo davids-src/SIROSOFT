@@ -31,6 +31,13 @@ export interface ReferenceCard {
   tech: string[];
 }
 
+export interface TestimonialCard {
+  name: string;
+  company: string;
+  quote: string;
+  role?: string;
+}
+
 export interface WhyItem {
   icon: string;
   title: string;
@@ -73,7 +80,7 @@ export const NAV = {
 
 export const HERO = {
   eyebrow: "SIROSOFT — Egyedi szoftverfejlesztés",
-  headline: ["A szoftver amit", "keresel, még nem", "létezik. Mi megírjuk."],
+  headline: ["A szoftver, amit", "keres, még nem", "létezik. Mi megírjuk."],
   subheadline:
     "Weboldaltól ERP rendszerig, mobilapptól belső ügyviteli platformig — minden megoldást az ügyfél folyamataira szabunk. Nem sablon. Nem kompromisszum.",
   primaryCta: "Ingyenes konzultáció →",
@@ -119,7 +126,7 @@ export const SERVICES: { eyebrow: string; headline: string; rows: ServiceRow[] }
       title: "Belső rendszerek",
       accent: "green",
       icon: "layout-dashboard",
-      headline: "Amit eddig Excelben vezettél, most rendszerben fut",
+      headline: "Amit eddig Excelben vezetett, most rendszerben fut",
       body: "Ügyviteli szoftverek, belső platformok, adatkezelő rendszerek — a cég saját folyamataira szabva. Raktárkezeléstől munkaóra-nyilvántartásig, dokumentumkezeléstől jóváhagyási workflow-ig.",
       bullets: [
         "Egyedi webalapú ügyviteli rendszer",
@@ -134,8 +141,8 @@ export const SERVICES: { eyebrow: string; headline: string; rows: ServiceRow[] }
       title: "CRM fejlesztés",
       accent: "green",
       icon: "users",
-      headline: "Ügyfélkezelés, ami tényleg az üzleted logikáját követi",
-      body: "Nem veszel drága licenszt egy feleslegesen komplex rendszerhez — mi megírjuk azt a CRM-et, ami pontosan azt tudja, amire szükséged van. Kapcsolatkezelés, ajánlatok, feladatok, értékesítési pipeline — mind egy helyen.",
+      headline: "Ügyfélkezelés, ami tényleg az Ön üzleti logikáját követi",
+      body: "Nem kell drága licencet vennie egy feleslegesen komplex rendszerhez — megírjuk azt a CRM-et, ami pontosan azt tudja, amire szüksége van. Kapcsolatkezelés, ajánlatok, feladatok, értékesítési pipeline — mind egy helyen.",
       bullets: [
         "Egyedi pipeline és státusz logika",
         "Ajánlat- és szerződéskezelés",
@@ -196,9 +203,9 @@ export const PROCESS: { eyebrow: string; headline: string; steps: ProcessStep[] 
   eyebrow: "FOLYAMAT",
   headline: "Hogyan dolgozunk együtt",
   steps: [
-    { number: "01", title: "Igényfelmérés", body: "Ingyenes konzultáció — megértjük a folyamataidat, céljaidat és korlátaidat." },
+    { number: "01", title: "Igényfelmérés", body: "Ingyenes konzultáció — megértjük a folyamatait, céljait és korlátait." },
     { number: "02", title: "Specifikáció", body: "Részletes funkcionális leírás, képernyőtervek, technikai architektúra." },
-    { number: "03", title: "Fejlesztés", body: "Sprint alapú fejlesztés, rendszeres demók — mindig látod, hol tartunk." },
+    { number: "03", title: "Fejlesztés", body: "Sprint alapú fejlesztés, rendszeres demókkal — mindig látja, hol tartunk." },
     { number: "04", title: "Tesztelés & átadás", body: "Alapos QA, éles indítás, oktatás és dokumentáció." },
     { number: "05", title: "Üzemeltetés", body: "Opcionális karbantartás és fejlesztés a SIRONIC keretein belül — ha kell, ott vagyunk." },
   ],
@@ -229,22 +236,25 @@ export const REFERENCES: { eyebrow: string; headline: string; cards: ReferenceCa
   ],
 };
 
+// TA2: Ügyfélvélemények (ha üres, a blokk nem jelenik meg)
+export const TESTIMONIALS: TestimonialCard[] = [];
+
 export const WHY: { eyebrow: string; headline: string; items: WhyItem[] } = {
   eyebrow: "MIÉRT SIROSOFT",
-  headline: "Amit máshol nem kapsz meg",
+  headline: "Amit nálunk megkap",
   items: [
     { icon: "code-2", title: "Nincs sablon, nincs kompromisszum", body: "Minden projektet nulláról, az ügyfél folyamataira szabunk." },
     { icon: "layers", title: "Moduláris, bővíthető rendszerek", body: "Amit ma fejlesztünk, holnap is bővíthető — nem kell újraírni egy év múlva." },
     { icon: "shield-check", title: "Biztonságos és dokumentált", body: "Kóddokumentáció, tesztek, és átadási dokumentáció minden projektnél." },
     { icon: "phone", title: "Egy pont, teljes felelősség", body: "Nem outsourcingolunk — a fejlesztés teljes egészében nálunk történik." },
     { icon: "refresh-cw", title: "SIRONIC integráció", body: "Ha kell, az üzemeltetést is átveszi a SIRONIC csapat. Egy kézből minden." },
-    { icon: "clock", title: "Átlátható határidők", body: "Sprint alapú fejlesztés, rendszeres demók. Mindig tudod, hol tartunk." },
+    { icon: "clock", title: "Átlátható határidők", body: "Sprint alapú fejlesztés, rendszeres demókkal. Mindig tudja, hol tartunk." },
   ],
 };
 
 export const CONTACT_CTA = {
-  headline: "Van egy ötleted vagy egy problémád?",
-  subheadline: "Nem kell kész specifikáció. Elég egy félórás egyeztetés — mi megmondjuk, hogy megvalósítható-e, és ha igen, mennyiből.",
+  headline: "Van egy ötlete vagy egy problémája?",
+  subheadline: "Nem kell kész specifikáció. Elég egy félórás egyeztetés — megmondjuk, hogy megvalósítható-e, és ha igen, mennyiből.",
   cta: "Ingyenes konzultációt kérek →",
   note: "Az igényfelmérő konzultáció ingyenes és kötelezettségmentes.",
 };

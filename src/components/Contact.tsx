@@ -66,7 +66,7 @@ export const Contact = () => {
   const submit = async (ev: FormEvent<HTMLFormElement>) => {
     ev.preventDefault();
     if (!validate()) {
-      toast.error("Kérlek töltsd ki a kötelező mezőket.");
+      toast.error("Kérjük, töltse ki a kötelező mezőket.");
       return;
     }
     setLoading(true);
@@ -77,10 +77,10 @@ export const Contact = () => {
         body: JSON.stringify(form),
       });
       if (!res.ok) throw new Error("Request failed");
-      toast.success("Köszönjük! Hamarosan felvesszük veled a kapcsolatot.");
+      toast.success("Köszönjük! 1 munkanapon belül felvesszük Önnel a kapcsolatot.");
       setForm(initial);
     } catch {
-      toast.error("Hiba történt a küldés során. Próbáld újra később.");
+      toast.error("Hiba történt a küldés során. Kérjük, próbálja újra később.");
     } finally {
       setLoading(false);
     }
@@ -114,7 +114,7 @@ export const Contact = () => {
                 </div>
 
                 <div className="rounded-lg border border-line bg-surface p-5 font-mono text-xs text-muted">
-                  <div className="text-[#1AE87B]">{"> response_time: < 24h"}</div>
+                  <div className="text-[#1AE87B]">{"> response_time: 1 munkanap"}</div>
                   <div>{"> consultation: free"}</div>
                   <div>{"> commitment: none"}</div>
                 </div>
@@ -185,7 +185,7 @@ export const Contact = () => {
                 {/* Services checkboxes */}
                 <div className="mt-6">
                   <label className="mb-2 block font-mono text-xs font-semibold uppercase tracking-[0.12em] text-muted">
-                    Milyen fejlesztésre van szükséged?
+                    Milyen fejlesztésre van szüksége?
                   </label>
                   <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                     {CONTACT.serviceOptions.map((opt) => {
@@ -223,7 +223,7 @@ export const Contact = () => {
                     className={`${inputClass} resize-none`}
                     value={form.description}
                     onChange={(e) => set("description", e.target.value)}
-                    placeholder="Mi a jelenlegi probléma, amit meg szeretnél oldani?"
+                    placeholder="Mi a jelenlegi probléma, amit meg szeretne oldani?"
                   />
                 </div>
 
@@ -238,7 +238,7 @@ export const Contact = () => {
                     value={form.budget}
                     onChange={(e) => set("budget", e.target.value)}
                   >
-                    <option value="">Válassz...</option>
+                    <option value="">Válasszon...</option>
                     {CONTACT.budgetOptions.map((opt) => (
                       <option key={opt} value={opt} className="bg-panel text-ink">
                         {opt}

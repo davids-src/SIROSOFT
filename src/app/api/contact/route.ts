@@ -61,12 +61,12 @@ async function sendEmail(body: Required<ContactPayload>): Promise<boolean> {
   const userHtml = `
     <div style="font-family: Arial, sans-serif; background-color: #ffffff; color: #333333; padding: 30px; border-radius: 8px; border: 1px solid #eaeaea;">
       <h2 style="color: #0A0A0C;">Kedves ${body.contact_name}!</h2>
-      <p style="font-size: 16px; line-height: 1.6;">Köszönjük, hogy megkerestél minket! A megadott adatokat (<strong>${body.company}</strong>) sikeresen rögzítettük rendszerünkben.</p>
-      <p style="font-size: 16px; line-height: 1.6;">Szakértő csapatunk hamarosan feldolgozza a kérést, és felveszi veled a kapcsolatot a megadott elérhetőségeiden.</p>
+      <p style="font-size: 16px; line-height: 1.6;">Köszönjük, hogy megkeresett minket! A megadott adatokat (<strong>${body.company}</strong>) sikeresen rögzítettük rendszerünkben.</p>
+      <p style="font-size: 16px; line-height: 1.6;">Szakértő csapatunk 1 munkanapon belül feldolgozza a kérést, és felveszi Önnel a kapcsolatot a megadott elérhetőségein.</p>
       <br />
       <p style="font-size: 16px; line-height: 1.6;">Üdvözlettel,<br/><strong style="color: #1AE87B;">SIROSOFT Csapat</strong></p>
       <hr style="border: none; border-top: 1px solid #eaeaea; margin: 30px 0;" />
-      <p style="font-size: 12px; color: #888;">Ez egy automatikusan generált e-mail. További információkért látogass el a <a href="${process.env.NEXT_PUBLIC_SITE_URL || 'https://sirosoft.hu'}" style="color: #1AE87B; text-decoration: none;">weboldalunkra</a>.</p>
+      <p style="font-size: 12px; color: #888;">Ez egy automatikusan generált e-mail. További információkért látogasson el a <a href="${process.env.NEXT_PUBLIC_SITE_URL || 'https://sirosoft.hu'}" style="color: #1AE87B; text-decoration: none;">weboldalunkra</a>.</p>
     </div>
   `;
 
@@ -83,7 +83,7 @@ async function sendEmail(body: Required<ContactPayload>): Promise<boolean> {
   await transporter.sendMail({
     from: fromEmail,
     to: body.email,
-    subject: `Megkaptuk az üzeneted – SIROSOFT`,
+    subject: `Megkaptuk megkeresését – SIROSOFT`,
     html: userHtml,
   });
 
