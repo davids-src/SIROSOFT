@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
+import ReactMarkdown from "react-markdown";
 
 export const revalidate = 3600;
 
@@ -131,9 +132,11 @@ export default function BlogPostPage({ params }: Props) {
               </div>
             )}
 
-            <article className="prose prose-invert max-w-none prose-headings:font-display prose-headings:text-ink prose-p:text-muted prose-p:leading-[1.8] prose-a:text-[#1AE87B] prose-strong:text-ink prose-code:text-[#1AE87B]">
-              <div className="whitespace-pre-wrap text-base leading-relaxed text-muted">
-                {post.content}
+            <article className="prose prose-invert max-w-none prose-headings:font-display prose-headings:text-ink prose-p:text-muted prose-p:leading-[1.8] prose-a:text-[#1AE87B] prose-strong:text-ink prose-code:text-[#1AE87B] prose-li:text-muted prose-ul:text-muted">
+              <div className="text-base leading-relaxed text-muted">
+                <ReactMarkdown>
+                  {post.content}
+                </ReactMarkdown>
               </div>
             </article>
           </div>
