@@ -20,10 +20,10 @@ const ERDWEG_URL =
   process.env.ERDWEG_URL_OVERRIDE ?? "https://erdweg.hu";
 
 const STATS = [
-  { value: "12+", label: "Befejezett projekt" },
+  { value: "18+", label: "Befejezett projekt" },
   { value: "100%", label: "Elégedett ügyfél" },
   { value: "3+ év", label: "B2B tapasztalat" },
-  { value: "5+", label: "Aktív ügyfél" },
+  { value: "10+", label: "Aktív ügyfél" },
 ];
 
 const PORTFOLIO_REFS = [
@@ -135,9 +135,43 @@ const PORTFOLIO_REFS = [
     description:
       "Fogászati klinika (Székesfehérvár) bemutatkozó weboldala, időpontkérési lehetőséggel.",
   },
+  {
+    id: "sporttender",
+    company: "Nemzeti Versenysport Szövetség",
+    url: "https://sporttender.hu",
+    image: "sporttender_hu",
+    alt: "NVESZ – Sporttender weboldal",
+    description:
+      "A Nemzeti Versenysport Szövetség (NVESZ) hivatalos pályázati weboldala és információs platformja a hazai versenysport támogatására.",
+  },
+  {
+    id: "sporttranszparencia",
+    company: "Nemzeti Versenysport Szövetség",
+    url: "https://sporttranszparencia.hu",
+    image: "sporttranszparencia_hu",
+    alt: "NVESZ – Sporttranszparencia weboldal",
+    description:
+      "A Nemzeti Versenysport Szövetség (NVESZ) átláthatósági portálja, ahol a sportfinanszírozási és támogatási adatok strukturált formában, könnyen kereshetően jelennek meg.",
+  },
 ];
 
-const INTERNAL_REFS = [
+type InternalRef = {
+  num: string;
+  status: string;
+  year: string;
+  industry: string;
+  title: string;
+  description: string;
+  modules?: Array<{
+    title: string;
+    description: string;
+    features: string[][];
+  }>;
+  highlights: string[];
+  tech: string[];
+};
+
+const INTERNAL_REFS: InternalRef[] = [
   {
     num: "01",
     status: "Aktív éles rendszer",
@@ -169,6 +203,36 @@ const INTERNAL_REFS = [
       "Több ezer meccs és verseny a háttérben",
     ],
     tech: ["Next.js", "MongoDB", "Node.js", "TypeScript", "Docker", "WebSocket"],
+  },
+  {
+    num: "03",
+    status: "Fejlesztés alatt / Bevezetés",
+    year: "2026–",
+    industry: "Építőipar",
+    title: "REC-PLUS Kft. – Integrált CRM és vállalatirányítás",
+    description:
+      "Teljesen egyedi fejlesztésű integrált CRM és vállalatirányítási rendszer, amelyet kifejezetten a REC-PLUS építőipari folyamataira szabtunk. A platform fókuszában az alvállalkozói nyilvántartás és nyomon követés, az építőanyag-készletek kezelése, valamint a napi logisztikai és szállítási folyamatok koordinálása áll.",
+    highlights: [
+      "Alvállalkozói nyilvántartás és nyomon követés",
+      "Építőipari fókuszú raktár- és készletkezelés",
+      "Logisztikai körök és szállítások tervezése",
+    ],
+    tech: ["Next.js 14", "MongoDB", "Docker", "TypeScript", "Tailwind CSS"],
+  },
+  {
+    num: "04",
+    status: "Aktív rendszer",
+    year: "2026",
+    industry: "Rendezvénytechnika",
+    title: "SAKKMED 2005 Kft. – Egyedi CRM és logisztikai rendszer",
+    description:
+      "A SAKKMED Kft. saját egyedi munkafolyamataira hangolt CRM és vállalatirányítási platform. A rendszer lefedi a rendezvénytechnika specifikus igényeit: komplex eszközfoglalás helyszínekre, fuvarozás és logisztika, valamint a technikai csapattagok precíz helyszíni beosztása.",
+    highlights: [
+      "Rendezvényes eszközfoglalás (hang, fény, színpad)",
+      "Eszköz-kiadás és visszavételezés nyomon követése",
+      "Automatizált naptár-szinkronizáció és beosztás",
+    ],
+    tech: ["Next.js", "MongoDB", "Docker", "TypeScript"],
   },
 ];
 
@@ -278,6 +342,7 @@ export default function Referenciak() {
                       <p className="mt-3 text-[15px] leading-[1.7] text-muted">
                         {ref.description}
                       </p>
+
                       <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
                         <div>
                           <div className="mb-3 font-mono text-xs text-muted">
