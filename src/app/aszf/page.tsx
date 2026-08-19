@@ -38,14 +38,14 @@ export default function AszfPage() {
                   <tbody>
                     {[
                       ["Cégnév", "SIROTECH Kft."],
-                      ["Székhely", "8000 Székesfehérvár, Lövölde utca 24 4/15"],
+                      ["Székhely", "8000 Székesfehérvár, Lövölde utca 24. 4/15."],
                       ["Adószám", "33056151-2-07"],
                       ["Cégjegyzékszám", "07-09-037603"],
                       ["Képviselő", "Tóth Tamás Bence"],
                       ["E-mail cím", "hello@sironic.hu"],
                       ["Telefonszám", "+36 30 602 4666"],
                       ["Weboldal", "sirosoft.hu"],
-                      ["Tárhelyszolgáltató", "SIROTECH Kft. — 8000 Székesfehérvár, Lövölde utca 24 4/15"],
+                      ["Tárhelyszolgáltató", "SIROTECH Kft. — 8000 Székesfehérvár, Lövölde utca 24. 4/15."],
                     ].map(([k, v]) => (
                       <tr key={k} className="border-b border-line last:border-0">
                         <td className="px-4 py-2.5 font-semibold text-ink w-44">{k}</td>

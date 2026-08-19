@@ -6,6 +6,7 @@ import { TechStack } from "@/components/TechStack";
 import { WhySirosoft } from "@/components/WhySirosoft";
 import { TeamSection } from "@/components/TeamSection";
 import { Testimonials } from "@/components/Testimonials";
+import { GroupSection } from "@/components/GroupSection";
 import { ContactCTA } from "@/components/ContactCTA";
 import { Footer } from "@/components/Footer";
 
@@ -19,6 +20,7 @@ export default function Home() {
         <ProcessStrip />
         <TechStack />
         <WhySirosoft />
+        <GroupSection />
         <TeamSection />
         <Testimonials />
         <ContactCTA />

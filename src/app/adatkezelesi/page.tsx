@@ -33,7 +33,7 @@ export default function AdatkezelesiPage() {
                 <tbody>
                   {[
                     ["Cégnév", "SIROTECH Kft."],
-                    ["Székhely", "8000 Székesfehérvár, Lövölde utca 24 4/15"],
+                    ["Székhely", "8000 Székesfehérvár, Lövölde utca 24. 4/15."],
                     ["Adószám", "33056151-2-07"],
                     ["Cégjegyzékszám", "07-09-037603"],
                     ["Képviselő", "Tóth Tamás Bence"],
@@ -160,7 +160,7 @@ export default function AdatkezelesiPage() {
                 </thead>
                 <tbody>
                   {[
-                    ["Tárhelyszolgáltatás, weboldal üzemeltetés", "SIROTECH Kft.", "8000 Székesfehérvár, Lövölde utca 24 4/15"],
+                    ["Tárhelyszolgáltatás, weboldal üzemeltetés", "SIROTECH Kft.", "8000 Székesfehérvár, Lövölde utca 24. 4/15."],
                     ["Statisztikai szolgáltatás", "Google Ireland Limited", "Gordon House, Barrow Street, Dublin 4, Írország"],
                     ["Könyvelés, számlázás", "Kinevezett könyvelő / számlázó", "—"],
                   ].map(([t, n, s]) => (

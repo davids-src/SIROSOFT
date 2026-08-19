@@ -272,7 +272,7 @@ export const CONTACT: {
   details: [
     { icon: "mail", value: "hello@sironic.hu" },
     { icon: "phone", value: "+36 70 273 5532" },
-    { icon: "map-pin", value: "8000 Székesfehérvár, Lövölde utca 24 4/15" },
+    { icon: "map-pin", value: "8000 Székesfehérvár, Lövölde utca 24. 4/15." },
   ],
   serviceOptions: [
     "Weboldal fejlesztés",

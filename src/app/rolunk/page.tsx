@@ -97,7 +97,7 @@ const MILESTONES = [
 const FAQS = [
   {
     q: "Hol található a csapatuk?",
-    a: "Székhelyünk Székesfehérváron van (8000, Lövölde utca 24), de munkánk döntő részét távolról végezzük, így az ország bármely pontján lévő ügyféllel tudunk együtt dolgozni.",
+    a: "Székhelyünk Székesfehérváron van (8000 Székesfehérvár, Lövölde utca 24. 4/15.), de munkánk döntő részét távolról végezzük, így az ország bármely pontján lévő ügyféllel tudunk együttdolgozni.",
   },
   {
     q: "Milyen méretű projekteket vállalnak?",
